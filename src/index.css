@@ -8,60 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 15% 10%;
-    --foreground: 0 0% 90%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 95%;
 
-    --card: 220 15% 12%;
-    --card-foreground: 0 0% 90%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 0 100% 60%;
+    --primary: 6 100% 64%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 217 32% 20%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 217 32% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 280 80% 60%;
+    --accent: 270 60% 65%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 280 80% 60%;
+    --border: 217 32% 25%;
+    --input: 217 32% 25%;
+    --ring: 270 60% 65%;
 
     --radius: 0.75rem;
 
-    /* Gradient colors from Kyair logo */
-    --gradient-start: 0 100% 60%;
-    --gradient-pink: 340 90% 65%;
-    --gradient-purple: 280 80% 60%;
-    --gradient-blue: 210 100% 60%;
+    /* Kyair gradient colors */
+    --gradient-red: 6 100% 64%;
+    --gradient-pink: 330 100% 71%;
+    --gradient-purple: 270 60% 65%;
+    --gradient-blue: 217 91% 60%;
 
-    /* Semantic surfaces */
-    --surface-elevated: 220 15% 14%;
-    --surface-hover: 220 15% 18%;
-  }
-}
-
-/* Gradient utilities */
-@layer utilities {
-  .gradient-text {
-    @apply bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-pink))] via-[hsl(var(--gradient-purple))] to-[hsl(var(--gradient-blue))] bg-clip-text text-transparent;
-  }
-
-  .gradient-border {
-    @apply border-transparent bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-pink))] via-[hsl(var(--gradient-purple))] to-[hsl(var(--gradient-blue))] bg-origin-border;
-  }
-
-  .gradient-bg {
-    @apply bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-pink))] via-[hsl(var(--gradient-purple))] to-[hsl(var(--gradient-blue))];
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gradient-red)), hsl(var(--gradient-pink)), hsl(var(--gradient-purple)), hsl(var(--gradient-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(222 47% 8%));
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -72,5 +60,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
