@@ -5,7 +5,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-6xl mx-auto">
           <div className="flex items-center space-x-2">
-            <img src={kyairLogo} alt="Kyair Consulting" className="h-8 w-8" />
+            <img 
+              src={kyairLogo} 
+              alt="Kyair Consulting" 
+              className="h-8 w-8"
+              loading="eager"
+              decoding="async"
+            />
             <div className="flex flex-col">
               <span className="text-base font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Kyair Consulting
