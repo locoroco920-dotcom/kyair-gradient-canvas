@@ -41,7 +41,7 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors hover:text-primary-foreground ${
                   isActive(link.path) ? "text-primary" : "text-muted-foreground"
                 }`}
               >
@@ -73,7 +73,7 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 text-sm font-medium transition-colors ${
+                className={`block py-2 text-sm font-medium transition-colors hover:text-primary-foreground ${
                   isActive(link.path) ? "text-primary" : "text-muted-foreground"
                 }`}
               >
