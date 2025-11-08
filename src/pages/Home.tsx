@@ -1,0 +1,142 @@
+import { Link } from "react-router-dom";
+import { Brain, TrendingUp, BarChart3, Zap, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+const Home = () => {
+  const services = [{
+    icon: Brain,
+    title: "AI Integration",
+    description: "Implement AI-driven solutions tailored to your operations for maximum efficiency."
+  }, {
+    icon: TrendingUp,
+    title: "Ad Campaign Management",
+    description: "Optimize multi-channel advertising campaigns for maximum ROI and growth."
+  }, {
+    icon: BarChart3,
+    title: "Analytics & Insights",
+    description: "Leverage data-driven insights to make informed business decisions."
+  }, {
+    icon: Zap,
+    title: "Automation",
+    description: "Streamline workflows with intelligent automation solutions."
+  }];
+  const testimonials = [{
+    quote: "Kyair's AI solutions boosted our marketing efficiency by 30%",
+    author: "Sarah Johnson",
+    role: "Marketing Director, TechCorp"
+  }, {
+    quote: "Their advertising strategies delivered a 150% increase in qualified leads",
+    author: "Michael Chen",
+    role: "CEO, GrowthLabs"
+  }, {
+    quote: "The custom AI implementation transformed our customer service operations",
+    author: "Emily Rodriguez",
+    role: "COO, ServicePro"
+  }];
+  return <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-32 pb-20 px-4">
+        <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Transforming Business with{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                AI Intelligence
+              </span>{" "}
+              & Advertising Impact
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Leverage cutting-edge AI solutions and data-driven advertising strategies to drive
+              exponential growth for your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/quote">
+                <Button variant="gradient" size="lg" className="group">
+                  Request a Custom Quote
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" size="lg">
+                  Learn More
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl font-bold mb-4">Our Core Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive AI and advertising solutions designed to accelerate your business growth
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => <Card key={index} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
+                <CardContent className="p-6 space-y-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <service.icon className="text-primary-foreground" size={24} />
+                  </div>
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                </CardContent>
+              </Card>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-card">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <p className="text-muted-foreground">Real results from real businesses</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => <Card key={index} className="animate-fade-in" style={{
+            animationDelay: `${index * 150}ms`
+          }}>
+                <CardContent className="p-6 space-y-4">
+                  <p className="text-lg italic">"{testimonial.quote}"</p>
+                  <div>
+                    <p className="font-semibold">{testimonial.author}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </CardContent>
+              </Card>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <Card className="relative overflow-hidden border-primary/20">
+            <div className="absolute inset-0 bg-gradient-primary opacity-5" />
+            <CardContent className="relative z-10 p-8 text-center space-y-4">
+              <h2 className="text-4xl font-bold">Ready to Elevate Your Business?</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Let's discuss how AI and advanced advertising can transform your operations
+              </p>
+              <div className="flex justify-center pt-2">
+                <Link to="/quote">
+                  <Button variant="gradient" size="lg" className="group">
+                    Get Your Custom Quote
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </div>;
+};
+export default Home;
