@@ -101,7 +101,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 px-4">
+      <section className="relative overflow-hidden pt-24 pb-12 px-3 sm:pt-32 sm:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -162,9 +162,9 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-20 px-3 sm:px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
@@ -172,7 +172,7 @@ const Projects = () => {
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
                 {/* Project Image */}
-                <div className="relative h-48 bg-muted overflow-hidden">
+                <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -184,12 +184,12 @@ const Projects = () => {
                 <CardHeader>
                   <div className="text-sm text-primary font-medium mb-2">{project.client}</div>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">
+                  <CardDescription className="line-clamp-2 md:line-clamp-3">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 md:space-y-4">
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -326,7 +326,7 @@ const Projects = () => {
       </section>
 
       {/* How We Work Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-20 px-3 sm:px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl font-bold mb-4">How We Work</h2>
@@ -335,7 +335,7 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {workProcess.map((process, index) => (
               <div 
                 key={index}
@@ -361,7 +361,7 @@ const Projects = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-card/50">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-card/50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
@@ -370,7 +370,7 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index}
@@ -394,9 +394,9 @@ const Projects = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center space-y-8 p-12 rounded-2xl bg-gradient-primary/10 border border-primary/20 animate-fade-in">
+      <section className="py-12 sm:py-20 px-3 sm:px-4"> 
+        <div className="container mx-auto"> 
+          <div className="max-w-4xl mx-auto text-center space-y-8 p-8 md:p-12 rounded-2xl bg-gradient-primary/10 border border-primary/20 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold">
               Ready to start your own AI-powered project?
             </h2>
