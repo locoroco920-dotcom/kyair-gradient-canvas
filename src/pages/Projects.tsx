@@ -168,8 +168,8 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
-                className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden opacity-0"
+                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-muted overflow-hidden">
@@ -339,8 +339,8 @@ const Projects = () => {
             {workProcess.map((process, index) => (
               <div 
                 key={index}
-                className="relative text-center animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="relative text-center animate-fade-in opacity-0"
+                style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}
               >
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-primary-foreground text-2xl font-bold">
@@ -374,8 +374,8 @@ const Projects = () => {
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="animate-fade-in opacity-0"
+                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
                 <CardContent className="p-6 space-y-4">
                   <div className="text-4xl text-primary/20">"</div>

@@ -42,6 +42,7 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={() => window.scrollTo(0, 0)}
                 className={`text-sm font-medium transition-colors hover:text-primary-foreground ${
                   isActive(link.path) ? "text-primary" : "text-muted-foreground"
                 }`}
@@ -49,7 +50,7 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/quote">
+            <Link to="/quote" onClick={() => window.scrollTo(0, 0)}>
               <Button variant="gradient" size="sm">
                 Get a Quote
               </Button>
@@ -73,7 +74,7 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                onClick={() => setIsOpen(false)}
+                onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}
                 className={`block py-2 text-sm font-medium transition-colors hover:text-primary-foreground ${
                   isActive(link.path) ? "text-primary" : "text-muted-foreground"
                 }`}
@@ -81,7 +82,7 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/quote" onClick={() => setIsOpen(false)}>
+            <Link to="/quote" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}>
               <Button variant="gradient" size="sm" className="w-full">
                 Get a Quote
               </Button>
