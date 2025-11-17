@@ -28,18 +28,18 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       {/* Mission & Vision */}
-      <section className="px-4 py-20">
+      <section className="px-3 sm:px-4 py-12 sm:py-20">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               About{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Kyair Consulting
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-xl text-muted-foreground leading-relaxed px-2">
               At Kyair Consulting, we're committed to bridging advanced AI technology with creative
               advertising to deliver measurable business growth. Our mission is to empower
               businesses to leverage the full potential of artificial intelligence while executing
@@ -47,10 +47,10 @@ const About = () => {
             </p>
           </div>
 
-          <Card className="mb-12 animate-slide-up">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-              <p className="text-muted-foreground leading-relaxed">
+          <Card className="mb-8 sm:mb-12 animate-slide-up">
+            <CardContent className="p-5 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Our Vision</h2>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 We envision a future where businesses of all sizes can harness the power of AI to
                 automate operations, enhance customer experiences, and make data-driven decisions.
                 Combined with strategic advertising that resonates with target audiences, we help
@@ -63,27 +63,27 @@ const About = () => {
       </section>
 
       {/* Why Kyair */}
-      <section className="px-4 py-20 bg-card">
+      <section className="px-3 sm:px-4 py-12 sm:py-20 bg-card">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose Kyair?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Why Choose Kyair?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
               We combine technical excellence with creative strategy to deliver unmatched value
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 max-w-5xl mx-auto">
             {strengths.map((strength, index) => (
               <Card
                 key={index}
                 className="group hover:border-primary/50 transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardContent className="p-8 space-y-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <strength.icon className="text-primary-foreground" size={28} />
+                <CardContent className="p-5 sm:p-8 space-y-3 sm:space-y-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <strength.icon className="text-primary-foreground" size={24} />
                   </div>
-                  <h3 className="text-2xl font-semibold">{strength.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{strength.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-semibold">{strength.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{strength.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -92,7 +92,7 @@ const About = () => {
       </section>
 
       {/* Stats/Impact */}
-      <section className="px-4 py-20">
+      <section className="px-3 sm:px-4 py-12 sm:py-20">
         <div className="container mx-auto max-w-4xl">
           <Card className="relative overflow-hidden border-primary/20">
             <div className="absolute inset-0 bg-gradient-primary opacity-5" />
