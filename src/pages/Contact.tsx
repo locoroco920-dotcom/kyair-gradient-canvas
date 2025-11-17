@@ -40,23 +40,23 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-6">
+    <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+      <div className="container mx-auto px-3 sm:px-4 max-w-6xl">
+        <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Get in{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
             Ready to transform your business? Let's start a conversation about your needs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Contact Form */}
           <Card className="lg:col-span-2 animate-slide-up">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="p-5 sm:p-8">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name *</Label>

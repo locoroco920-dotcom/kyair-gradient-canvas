@@ -101,21 +101,21 @@ const Projects = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-24 pb-12 px-3 sm:pt-32 sm:pb-20 sm:px-4">
+      <section className="relative overflow-hidden pt-20 pb-10 px-3 sm:pt-24 sm:pb-12 md:pt-32 md:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
         <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 AI-Powered Projects
               </span>{" "}
               & Web Experiences
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
               Real examples of how Kyair Consulting helps small businesses, creators, and brands 
               unlock growth with AI, automation, and high-impact websites.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
               <Link to="/quote">
                 <Button variant="gradient" size="lg" className="group">
                   Start Your Project
@@ -133,9 +133,9 @@ const Projects = () => {
       </section>
 
       {/* Filters & Stats */}
-      <section className="py-8 px-4 border-b border-border">
+      <section className="py-6 sm:py-8 px-3 sm:px-4 border-b border-border">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -152,7 +152,7 @@ const Projects = () => {
             </div>
             
             {/* Stats */}
-            <div className="text-sm text-muted-foreground">
+            <div className="text-xs sm:text-sm text-muted-foreground">
               <span className="font-semibold text-foreground">{filteredProjects.length}</span> projects • 
               AI & automation focused • 
               Serving small businesses and creators
@@ -162,9 +162,9 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-12 sm:py-20 px-3 sm:px-4">
+      <section className="py-12 sm:py-20 px-2 sm:px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
@@ -181,28 +181,28 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
                 </div>
 
-                <CardHeader>
-                  <div className="text-sm text-primary font-medium mb-2">{project.client}</div>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-2 md:line-clamp-3">
+                <CardHeader className="p-3 sm:p-4 md:p-6">
+                  <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">{project.client}</div>
+                  <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">{project.title}</CardTitle>
+                  <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-3 md:space-y-4">
+                <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
+                      <Badge key={tag} variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
                         {tag}
                       </Badge>
                     ))}
                   </div>
 
                   {/* CTA */}
-                  <Button variant="ghost" className="w-full group/btn">
+                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>

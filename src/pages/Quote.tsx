@@ -69,14 +69,14 @@ const Quote = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      <section className="px-4 py-20">
+    <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+      <section className="px-3 sm:px-4 py-12 sm:py-20">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               Get a <span className="bg-gradient-primary bg-clip-text text-transparent">Custom Quote</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-xl text-muted-foreground px-2">
               Tell us about your needs and we'll create a tailored solution for you
             </p>
           </div>
