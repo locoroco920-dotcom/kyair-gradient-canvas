@@ -117,7 +117,7 @@ const Quote = () => {
   if (submitted) {
     return (
       <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
-        <section className="px-3 sm:px-4 py-12 sm:py-20 bg-accent/20">
+        <section className="px-3 sm:px-4 py-12 sm:py-20">
           <div className="container mx-auto max-w-2xl text-center">
             <div className="animate-scale-in">
               <CheckCircle2 className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 text-primary" />
@@ -139,7 +139,7 @@ const Quote = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
-      <section className="px-3 sm:px-4 py-12 sm:py-20 bg-accent/20">
+      <section className="px-3 sm:px-4 py-12 sm:py-20">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column - Intro */}
@@ -189,12 +189,12 @@ const Quote = () => {
             </div>
 
             {/* Right Column - Form */}
-            <Card className="animate-slide-up lg:sticky lg:top-24">
-              <CardContent className="p-4 sm:p-6 md:p-8">
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <Card className="animate-slide-up shadow-lg">
+              <CardContent className="p-4 sm:p-6 lg:p-10">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   {/* Contact & Business Details */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">Contact & Business Details</h3>
+                    <h3 className="text-xl font-semibold border-b pb-3 mb-4">Contact & Business Details</h3>
                     
                     <div className="space-y-2">
                       <Label htmlFor="fullName">
@@ -267,7 +267,7 @@ const Quote = () => {
 
                   {/* Business Stage & Industry */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">Business Stage & Industry</h3>
+                    <h3 className="text-xl font-semibold border-b pb-3 mb-4">Business Stage & Industry</h3>
                     
                     <div className="space-y-2">
                       <Label htmlFor="businessStage">
@@ -330,7 +330,7 @@ const Quote = () => {
 
                   {/* What Are You Interested In? */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">
+                    <h3 className="text-xl font-semibold border-b pb-3 mb-4">
                       What Are You Interested In? <span className="text-destructive">*</span>
                     </h3>
                     
@@ -455,7 +455,7 @@ const Quote = () => {
 
                   {/* Budget & Timeline */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">Budget & Timeline</h3>
+                    <h3 className="text-xl font-semibold border-b pb-3 mb-4">Budget & Timeline</h3>
                     
                     <div className="space-y-2">
                       <Label>
@@ -526,7 +526,7 @@ const Quote = () => {
 
                   {/* Project Details */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">Project Details</h3>
+                    <h3 className="text-xl font-semibold border-b pb-3 mb-4">Project Details</h3>
                     
                     <div className="space-y-2">
                       <Label htmlFor="projectDetails">
