@@ -140,10 +140,10 @@ const Quote = () => {
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <section className="px-3 sm:px-4 py-12 sm:py-20">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Left Column - Intro */}
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-6 animate-fade-in lg:w-80 lg:flex-shrink-0">
               <div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                   Get a Custom{" "}
@@ -189,58 +189,60 @@ const Quote = () => {
             </div>
 
             {/* Right Column - Form */}
-            <Card className="animate-slide-up shadow-lg">
+            <Card className="animate-slide-up shadow-lg lg:flex-1">
               <CardContent className="p-4 sm:p-6 lg:p-10">
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   {/* Contact & Business Details */}
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold border-b pb-3 mb-4">Contact & Business Details</h3>
                     
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName">
-                        Full Name <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="fullName"
-                        {...form.register("fullName")}
-                        placeholder="Your full name"
-                      />
-                      {form.formState.errors.fullName && (
-                        <p className="text-xs text-destructive">{form.formState.errors.fullName.message}</p>
-                      )}
-                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="fullName">
+                          Full Name <span className="text-destructive">*</span>
+                        </Label>
+                        <Input
+                          id="fullName"
+                          {...form.register("fullName")}
+                          placeholder="Your full name"
+                        />
+                        {form.formState.errors.fullName && (
+                          <p className="text-xs text-destructive">{form.formState.errors.fullName.message}</p>
+                        )}
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        Email <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        {...form.register("email")}
-                        placeholder="your@email.com"
-                      />
-                      {form.formState.errors.email && (
-                        <p className="text-xs text-destructive">{form.formState.errors.email.message}</p>
-                      )}
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">
+                          Email <span className="text-destructive">*</span>
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          {...form.register("email")}
+                          placeholder="your@email.com"
+                        />
+                        {form.formState.errors.email && (
+                          <p className="text-xs text-destructive">{form.formState.errors.email.message}</p>
+                        )}
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="businessName">Business Name</Label>
-                      <Input
-                        id="businessName"
-                        {...form.register("businessName")}
-                        placeholder="Your business name (optional)"
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="businessName">Business Name</Label>
+                        <Input
+                          id="businessName"
+                          {...form.register("businessName")}
+                          placeholder="Your business name (optional)"
+                        />
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="websiteUrl">Current Website URL</Label>
-                      <Input
-                        id="websiteUrl"
-                        {...form.register("websiteUrl")}
-                        placeholder="https://yourbusiness.com (optional)"
-                      />
+                      <div className="space-y-2">
+                        <Label htmlFor="websiteUrl">Current Website URL</Label>
+                        <Input
+                          id="websiteUrl"
+                          {...form.register("websiteUrl")}
+                          placeholder="https://yourbusiness.com (optional)"
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-2">
@@ -248,6 +250,7 @@ const Quote = () => {
                       <RadioGroup
                         onValueChange={(value) => form.setValue("contactMethod", value as any)}
                         defaultValue="email"
+                        className="flex flex-wrap gap-4"
                       >
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="email" id="contact-email" />
@@ -269,51 +272,53 @@ const Quote = () => {
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold border-b pb-3 mb-4">Business Stage & Industry</h3>
                     
-                    <div className="space-y-2">
-                      <Label htmlFor="businessStage">
-                        Where are you at right now? <span className="text-destructive">*</span>
-                      </Label>
-                      <Select onValueChange={(value) => form.setValue("businessStage", value)}>
-                        <SelectTrigger id="businessStage">
-                          <SelectValue placeholder="Select your stage..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="starting">I'm just getting started / no real online presence yet</SelectItem>
-                          <SelectItem value="outdated">I have a basic site but it's outdated or messy</SelectItem>
-                          <SelectItem value="decent">I have a decent setup but want better marketing & lead gen</SelectItem>
-                          <SelectItem value="ai-focus">I'm mainly looking for AI, automation, or data tools</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      {form.formState.errors.businessStage && (
-                        <p className="text-xs text-destructive">{form.formState.errors.businessStage.message}</p>
-                      )}
-                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="businessStage">
+                          Where are you at right now? <span className="text-destructive">*</span>
+                        </Label>
+                        <Select onValueChange={(value) => form.setValue("businessStage", value)}>
+                          <SelectTrigger id="businessStage">
+                            <SelectValue placeholder="Select your stage..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="starting">I'm just getting started / no real online presence yet</SelectItem>
+                            <SelectItem value="outdated">I have a basic site but it's outdated or messy</SelectItem>
+                            <SelectItem value="decent">I have a decent setup but want better marketing & lead gen</SelectItem>
+                            <SelectItem value="ai-focus">I'm mainly looking for AI, automation, or data tools</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {form.formState.errors.businessStage && (
+                          <p className="text-xs text-destructive">{form.formState.errors.businessStage.message}</p>
+                        )}
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="industry">
-                        What industry are you in? <span className="text-destructive">*</span>
-                      </Label>
-                      <Select onValueChange={(value) => form.setValue("industry", value)}>
-                        <SelectTrigger id="industry">
-                          <SelectValue placeholder="Select your industry..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="content-creator">Content Creator / Influencer</SelectItem>
-                          <SelectItem value="restaurant">Restaurant / Café / Bar</SelectItem>
-                          <SelectItem value="fashion">Fashion / Retail / E-commerce</SelectItem>
-                          <SelectItem value="local-services">Local Services (salon, trades, home services, etc.)</SelectItem>
-                          <SelectItem value="professional">Professional Services (legal, accounting, consulting)</SelectItem>
-                          <SelectItem value="healthcare">Healthcare / Wellness</SelectItem>
-                          <SelectItem value="real-estate">Real Estate</SelectItem>
-                          <SelectItem value="education">Education / Coaching</SelectItem>
-                          <SelectItem value="nonprofit">Non-profit / Community</SelectItem>
-                          <SelectItem value="automotive">Automotive</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      {form.formState.errors.industry && (
-                        <p className="text-xs text-destructive">{form.formState.errors.industry.message}</p>
-                      )}
+                      <div className="space-y-2">
+                        <Label htmlFor="industry">
+                          What industry are you in? <span className="text-destructive">*</span>
+                        </Label>
+                        <Select onValueChange={(value) => form.setValue("industry", value)}>
+                          <SelectTrigger id="industry">
+                            <SelectValue placeholder="Select your industry..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="content-creator">Content Creator / Influencer</SelectItem>
+                            <SelectItem value="restaurant">Restaurant / Café / Bar</SelectItem>
+                            <SelectItem value="fashion">Fashion / Retail / E-commerce</SelectItem>
+                            <SelectItem value="local-services">Local Services (salon, trades, home services, etc.)</SelectItem>
+                            <SelectItem value="professional">Professional Services (legal, accounting, consulting)</SelectItem>
+                            <SelectItem value="healthcare">Healthcare / Wellness</SelectItem>
+                            <SelectItem value="real-estate">Real Estate</SelectItem>
+                            <SelectItem value="education">Education / Coaching</SelectItem>
+                            <SelectItem value="nonprofit">Non-profit / Community</SelectItem>
+                            <SelectItem value="automotive">Automotive</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {form.formState.errors.industry && (
+                          <p className="text-xs text-destructive">{form.formState.errors.industry.message}</p>
+                        )}
+                      </div>
                     </div>
 
                     {form.watch("industry") === "other" && (
@@ -334,117 +339,119 @@ const Quote = () => {
                       What Are You Interested In? <span className="text-destructive">*</span>
                     </h3>
                     
-                    {/* Packages */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Packages</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      {/* Packages */}
                       <div className="space-y-2">
-                        {serviceOptions.packages.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">Packages</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.packages.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Branding & Visuals */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Branding & Visuals</h4>
+                      {/* Branding & Visuals */}
                       <div className="space-y-2">
-                        {serviceOptions.branding.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">Branding & Visuals</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.branding.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Web & Presence */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Web & Presence</h4>
+                      {/* Web & Presence */}
                       <div className="space-y-2">
-                        {serviceOptions.web.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">Web & Presence</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.web.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* AI & Automation */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">AI & Automation</h4>
+                      {/* AI & Automation */}
                       <div className="space-y-2">
-                        {serviceOptions.ai.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">AI & Automation</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.ai.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Media & Data */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Media & Data</h4>
+                      {/* Media & Data */}
                       <div className="space-y-2">
-                        {serviceOptions.media.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">Media & Data</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.media.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Training & Support */}
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Training & Support</h4>
+                      {/* Training & Support */}
                       <div className="space-y-2">
-                        {serviceOptions.support.map((service) => (
-                          <div key={service.id} className="flex items-start space-x-2">
-                            <Checkbox
-                              id={service.id}
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                            />
-                            <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
-                              {service.label}
-                            </Label>
-                          </div>
-                        ))}
+                        <h4 className="font-medium text-sm">Training & Support</h4>
+                        <div className="space-y-2">
+                          {serviceOptions.support.map((service) => (
+                            <div key={service.id} className="flex items-start space-x-2">
+                              <Checkbox
+                                id={service.id}
+                                checked={selectedServices.includes(service.id)}
+                                onCheckedChange={() => handleServiceToggle(service.id)}
+                              />
+                              <Label htmlFor={service.id} className="font-normal text-sm leading-tight cursor-pointer">
+                                {service.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
@@ -457,70 +464,72 @@ const Quote = () => {
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold border-b pb-3 mb-4">Budget & Timeline</h3>
                     
-                    <div className="space-y-2">
-                      <Label>
-                        What's your comfortable monthly budget for this work? <span className="text-destructive">*</span>
-                      </Label>
-                      <RadioGroup onValueChange={(value) => form.setValue("monthlyBudget", value)}>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="lowest" id="budget-lowest" />
-                          <Label htmlFor="budget-lowest" className="font-normal text-sm">I'm looking for the lowest-cost option</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="150" id="budget-150" />
-                          <Label htmlFor="budget-150" className="font-normal text-sm">Up to $150/month</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="150-350" id="budget-350" />
-                          <Label htmlFor="budget-350" className="font-normal text-sm">$150–$350/month</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="350-650" id="budget-650" />
-                          <Label htmlFor="budget-650" className="font-normal text-sm">$350–$650/month</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="650-1000" id="budget-1000" />
-                          <Label htmlFor="budget-1000" className="font-normal text-sm">$650–$1,000/month</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="1000+" id="budget-plus" />
-                          <Label htmlFor="budget-plus" className="font-normal text-sm">$1,000+/month</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="not-sure" id="budget-unsure" />
-                          <Label htmlFor="budget-unsure" className="font-normal text-sm">Not sure yet</Label>
-                        </div>
-                      </RadioGroup>
-                      {form.formState.errors.monthlyBudget && (
-                        <p className="text-xs text-destructive">{form.formState.errors.monthlyBudget.message}</p>
-                      )}
-                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label>
+                          What's your comfortable monthly budget for this work? <span className="text-destructive">*</span>
+                        </Label>
+                        <RadioGroup onValueChange={(value) => form.setValue("monthlyBudget", value)}>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="lowest" id="budget-lowest" />
+                            <Label htmlFor="budget-lowest" className="font-normal text-sm">I'm looking for the lowest-cost option</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="150" id="budget-150" />
+                            <Label htmlFor="budget-150" className="font-normal text-sm">Up to $150/month</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="150-350" id="budget-350" />
+                            <Label htmlFor="budget-350" className="font-normal text-sm">$150–$350/month</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="350-650" id="budget-650" />
+                            <Label htmlFor="budget-650" className="font-normal text-sm">$350–$650/month</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="650-1000" id="budget-1000" />
+                            <Label htmlFor="budget-1000" className="font-normal text-sm">$650–$1,000/month</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="1000+" id="budget-plus" />
+                            <Label htmlFor="budget-plus" className="font-normal text-sm">$1,000+/month</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="not-sure" id="budget-unsure" />
+                            <Label htmlFor="budget-unsure" className="font-normal text-sm">Not sure yet</Label>
+                          </div>
+                        </RadioGroup>
+                        {form.formState.errors.monthlyBudget && (
+                          <p className="text-xs text-destructive">{form.formState.errors.monthlyBudget.message}</p>
+                        )}
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label>
-                        When would you like to get started? <span className="text-destructive">*</span>
-                      </Label>
-                      <RadioGroup onValueChange={(value) => form.setValue("timeline", value)}>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="asap" id="timeline-asap" />
-                          <Label htmlFor="timeline-asap" className="font-normal text-sm">ASAP (this month)</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="1-3" id="timeline-13" />
-                          <Label htmlFor="timeline-13" className="font-normal text-sm">In the next 1–3 months</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="3-6" id="timeline-36" />
-                          <Label htmlFor="timeline-36" className="font-normal text-sm">In 3–6 months</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="exploring" id="timeline-exploring" />
-                          <Label htmlFor="timeline-exploring" className="font-normal text-sm">I'm just exploring options</Label>
-                        </div>
-                      </RadioGroup>
-                      {form.formState.errors.timeline && (
-                        <p className="text-xs text-destructive">{form.formState.errors.timeline.message}</p>
-                      )}
+                      <div className="space-y-2">
+                        <Label>
+                          When would you like to get started? <span className="text-destructive">*</span>
+                        </Label>
+                        <RadioGroup onValueChange={(value) => form.setValue("timeline", value)}>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="asap" id="timeline-asap" />
+                            <Label htmlFor="timeline-asap" className="font-normal text-sm">ASAP (this month)</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="1-3" id="timeline-13" />
+                            <Label htmlFor="timeline-13" className="font-normal text-sm">In the next 1–3 months</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="3-6" id="timeline-36" />
+                            <Label htmlFor="timeline-36" className="font-normal text-sm">In 3–6 months</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="exploring" id="timeline-exploring" />
+                            <Label htmlFor="timeline-exploring" className="font-normal text-sm">I'm just exploring options</Label>
+                          </div>
+                        </RadioGroup>
+                        {form.formState.errors.timeline && (
+                          <p className="text-xs text-destructive">{form.formState.errors.timeline.message}</p>
+                        )}
+                      </div>
                     </div>
                   </div>
 
