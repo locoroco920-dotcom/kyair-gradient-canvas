@@ -43,7 +43,7 @@ const Projects = () => {
       <section className="py-6 sm:py-8 px-3 sm:px-4 border-b border-border">
         <div className="container mx-auto">
           <div className="text-center text-xs sm:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">6</span> projects • 
+            <span className="font-semibold text-foreground">7</span> projects • 
             AI & automation focused • 
             Serving small businesses and creators
           </div>
@@ -57,12 +57,8 @@ const Projects = () => {
             
             {/* Project 1 - TrapMachine35 */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="TrapMachine35 Automotive Content Brand Site"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary/30">TM35</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -96,12 +92,8 @@ const Projects = () => {
 
             {/* Project 2 - Faris Athletics */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Faris Athletics Fitness Coaching Landing Page"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-green-500/20 via-emerald-500/20 to-teal-500/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-emerald-500/30">FA</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -134,12 +126,8 @@ const Projects = () => {
 
             {/* Project 3 - TFAY Autoworks */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="TFAY Autoworks Performance Shop Presence"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-orange-500/20 via-red-500/20 to-yellow-500/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500/30">TFAY</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -172,12 +160,8 @@ const Projects = () => {
 
             {/* Project 4 - Murray the Snow Egret */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Murray the Snow Egret Mascot Animation"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-sky-500/20 via-blue-500/20 to-cyan-500/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-sky-500/30">🦅</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -204,12 +188,8 @@ const Projects = () => {
 
             {/* Project 5 - Local Service Business */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Local Service Business AI Chat and Lead Capture"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-violet-500/20 via-purple-500/20 to-fuchsia-500/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-violet-500/30">AI</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -236,12 +216,8 @@ const Projects = () => {
 
             {/* Project 6 - Professional Services */}
             <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Professional Services Internal Process Automation"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-slate-500/20 via-gray-500/20 to-zinc-500/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-500/30">⚙️</span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -262,6 +238,40 @@ const Projects = () => {
                     View Case Study
                     <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                   </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project 7 - Noonan's Bar and Grill */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-amber-500/20 via-yellow-600/20 to-orange-600/30 overflow-hidden flex items-center justify-center">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-500/30">🍔</span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Noonan's Bar and Grill</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">Restaurant Landing Page</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Designed an inviting landing page for a local bar and grill, featuring menu highlights, location info, and a warm atmosphere that reflects the restaurant's character.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Web Design</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Restaurant</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Local Business</Badge>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                    View Case Study
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </Button>
+                  <a href="https://tfnoonans.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
+                      Visit Project
+                      <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
