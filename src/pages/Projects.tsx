@@ -55,7 +55,7 @@ const Projects = () => {
             
             {/* Project 1 - TrapMachine35 */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-trapmachine.jpg" alt="TrapMachine35 Automotive Content Brand Site" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -89,7 +89,7 @@ const Projects = () => {
 
             {/* Project 2 - Faris Athletics */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-faris.jpg" alt="Faris Athletics Fitness Coaching Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -122,7 +122,7 @@ const Projects = () => {
 
             {/* Project 3 - TFAY Autoworks */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-tfay.jpg" alt="TFAY Autoworks Performance Shop Presence" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -155,7 +155,7 @@ const Projects = () => {
 
             {/* Project 4 - Murray the Snow Egret */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-murray.jpg" alt="Murray the Snow Egret Mascot Animation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -182,7 +182,7 @@ const Projects = () => {
 
             {/* Project 5 - Local Service Business */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-ai-chat.jpg" alt="Local Service Business AI Chat and Lead Capture" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -209,7 +209,7 @@ const Projects = () => {
 
             {/* Project 6 - Professional Services */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+<div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-automation.jpg" alt="Professional Services Internal Process Automation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -236,7 +236,7 @@ const Projects = () => {
 
             {/* Project 7 - Noonan's Bar and Grill */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
                 <img src="/images/project-noonans.jpg" alt="Noonan's Bar and Grill Restaurant Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
