@@ -80,9 +80,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">SEO</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   <a href="https://trapmachine35.xyz" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
@@ -113,9 +113,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Coaching</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   <a href="https://farisfitnessathletics.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
@@ -146,9 +146,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Performance</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   <a href="https://tfayauto.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
@@ -179,9 +179,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Branding</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -206,9 +206,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Lead Gen</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -233,9 +233,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Operations</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -260,9 +260,9 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Local Business</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                     View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   <a href="https://tfnoonans.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
