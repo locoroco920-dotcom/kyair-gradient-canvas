@@ -4,6 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
 
+import projectTrapmachine from "@/assets/project-trapmachine.jpg";
+import projectFaris from "@/assets/project-faris.jpg";
+import projectTfay from "@/assets/project-tfay.jpg";
+import projectMurray from "@/assets/project-murray.jpg";
+import projectAiChat from "@/assets/project-ai-chat.jpg";
+import projectAutomation from "@/assets/project-automation.jpg";
+import projectNoonans from "@/assets/project-noonans.jpg";
+
 const Projects = () => {
   return (
     <div className="min-h-screen">
@@ -56,14 +64,13 @@ const Projects = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             
             {/* Project 1 - TrapMachine35 */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop" 
+                  src={projectTrapmachine} 
                   alt="TrapMachine35 Automotive Content Brand Site"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TrapMachine35</div>
@@ -95,14 +102,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 2 - Faris Athletics */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop" 
+                  src={projectFaris} 
                   alt="Faris Athletics Fitness Coaching Landing Page"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Faris Athletics</div>
@@ -133,14 +139,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 3 - TFAY Autoworks */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&h=400&fit=crop" 
+                  src={projectTfay} 
                   alt="TFAY Autoworks Performance Shop Presence"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TFAY Autoworks</div>
@@ -171,14 +176,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 4 - Murray the Snow Egret */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?w=600&h=400&fit=crop" 
+                  src={projectMurray} 
                   alt="Murray the Snow Egret Mascot Animation"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Meadowlands Chamber of Commerce</div>
@@ -203,14 +207,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 5 - Local Service Business */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop" 
+                  src={projectAiChat} 
                   alt="Local Service Business AI Chat and Lead Capture"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Local Service Business</div>
@@ -235,14 +238,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 6 - Professional Services */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                  src={projectAutomation} 
                   alt="Professional Services Internal Process Automation"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Professional Services</div>
@@ -267,14 +269,13 @@ const Projects = () => {
             </Card>
 
             {/* Project 7 - Noonan's Bar and Grill */}
-            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" 
+                  src={projectNoonans} 
                   alt="Noonan's Bar and Grill Restaurant Landing Page"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Noonan's Bar and Grill</div>
