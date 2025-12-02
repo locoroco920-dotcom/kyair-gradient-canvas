@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
-
 import projectTrapmachine from "@/assets/project-trapmachine.jpg";
 import projectFaris from "@/assets/project-faris.jpg";
 import projectTfay from "@/assets/project-tfay.jpg";
@@ -11,10 +10,8 @@ import projectMurray from "@/assets/project-murray.jpg";
 import projectAiChat from "@/assets/project-ai-chat.jpg";
 import projectAutomation from "@/assets/project-automation.jpg";
 import projectNoonans from "@/assets/project-noonans.jpg";
-
 const Projects = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-10 px-3 sm:pt-24 sm:pb-12 md:pt-32 md:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
@@ -66,11 +63,7 @@ const Projects = () => {
             {/* Project 1 - TrapMachine35 */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectTrapmachine} 
-                  alt="TrapMachine35 Automotive Content Brand Site"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectTrapmachine} alt="TrapMachine35 Automotive Content Brand Site" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TrapMachine35</div>
@@ -104,11 +97,7 @@ const Projects = () => {
             {/* Project 2 - Faris Athletics */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectFaris} 
-                  alt="Faris Athletics Fitness Coaching Landing Page"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectFaris} alt="Faris Athletics Fitness Coaching Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Faris Athletics</div>
@@ -141,11 +130,7 @@ const Projects = () => {
             {/* Project 3 - TFAY Autoworks */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectTfay} 
-                  alt="TFAY Autoworks Performance Shop Presence"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectTfay} alt="TFAY Autoworks Performance Shop Presence" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TFAY Autoworks</div>
@@ -178,11 +163,7 @@ const Projects = () => {
             {/* Project 4 - Murray the Snow Egret */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectMurray} 
-                  alt="Murray the Snow Egret Mascot Animation"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectMurray} alt="Murray the Snow Egret Mascot Animation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Meadowlands Chamber of Commerce</div>
@@ -209,11 +190,7 @@ const Projects = () => {
             {/* Project 5 - Local Service Business */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectAiChat} 
-                  alt="Local Service Business AI Chat and Lead Capture"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectAiChat} alt="Local Service Business AI Chat and Lead Capture" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Local Service Business</div>
@@ -240,11 +217,7 @@ const Projects = () => {
             {/* Project 6 - Professional Services */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectAutomation} 
-                  alt="Professional Services Internal Process Automation"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectAutomation} alt="Professional Services Internal Process Automation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Professional Services</div>
@@ -271,11 +244,7 @@ const Projects = () => {
             {/* Project 7 - Noonan's Bar and Grill */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden bg-card">
-                <img 
-                  src={projectNoonans} 
-                  alt="Noonan's Bar and Grill Restaurant Landing Page"
-                  className="absolute inset-0 w-full h-full object-cover block z-10"
-                />
+                <img src={projectNoonans} alt="Noonan's Bar and Grill Restaurant Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Noonan's Bar and Grill</div>
@@ -554,8 +523,6 @@ const Projects = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Projects;
