@@ -1,103 +1,17 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
 
+// Import project images - replace these with your actual images
+import project1Image from "@/assets/kyair-logo.png";
+import project2Image from "@/assets/kyair-logo.png";
+import project3Image from "@/assets/kyair-logo.png";
+import project4Image from "@/assets/kyair-logo.png";
+import project5Image from "@/assets/kyair-logo.png";
+
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const categories = ["All", "Web Design", "AI Automation", "Marketing Funnels", "Brand & Content"];
-
-  const projects = [
-    {
-      id: 1,
-      client: "TrapMachine35",
-      title: "Automotive Content Brand Site",
-      description: "Built a high-energy, mobile-optimized site for an automotive content creator, integrating social media, lead capture, and a gallery for builds and collaborations.",
-      tags: ["Web Design", "Branding", "Creator", "SEO"],
-      image: "/placeholder.svg",
-      category: "Web Design"
-    },
-    {
-      id: 2,
-      client: "Faris Athletics",
-      title: "Fitness Coaching Landing Page",
-      description: "Designed a conversion-focused landing page for a fitness coach with clear service packages, testimonials, and an intake form integrated with email automation.",
-      tags: ["Web Design", "Marketing Funnels", "Coaching"],
-      image: "/placeholder.svg",
-      category: "Marketing Funnels"
-    },
-    {
-      id: 3,
-      client: "TFAY Autoworks",
-      title: "Performance Shop Presence",
-      description: "Created a modern, performance-oriented website for a tuning shop showcasing services, before-and-after galleries, and online appointment requests.",
-      tags: ["Web Development", "Local Business", "Performance"],
-      image: "/placeholder.svg",
-      category: "Web Design"
-    },
-    {
-      id: 4,
-      client: "Local Service Business",
-      title: "AI Chat & Lead Capture",
-      description: "Implemented an AI-assisted FAQ/chat widget and automated lead intake forms that route inquiries to email and CRM, improving response speed and lead quality.",
-      tags: ["AI Automation", "No-Code", "Lead Gen"],
-      image: "/placeholder.svg",
-      category: "AI Automation"
-    },
-    {
-      id: 5,
-      client: "Professional Services",
-      title: "Internal Process Automation",
-      description: "Built simple dashboards and automations to streamline onboarding tasks, document handling, and internal communication using AI and low-code tools.",
-      tags: ["Automation", "AI Workflows", "Operations"],
-      image: "/placeholder.svg",
-      category: "AI Automation"
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: "Kyair Consulting helped us turn a basic idea into a polished online presence. The process was collaborative, and the final site has already started bringing in more leads.",
-      author: "Alex Martinez",
-      business: "TrapMachine35"
-    },
-    {
-      quote: "The AI automation tools they built for us have cut our response time in half. Our customers are happier and we're closing more deals.",
-      author: "Jordan Lee",
-      business: "Local Service Provider"
-    },
-    {
-      quote: "From concept to launch, Kyair made the whole process smooth. They understood our vision and delivered a site that truly represents our brand.",
-      author: "Taylor Faris",
-      business: "Faris Athletics"
-    }
-  ];
-
-  const workProcess = [
-    {
-      step: "01",
-      title: "Discover",
-      description: "We learn your business, goals, and pain points through collaborative discovery sessions."
-    },
-    {
-      step: "02",
-      title: "Design & Build",
-      description: "We design an AI-supported solution, build your site or automation, and iterate with your feedback."
-    },
-    {
-      step: "03",
-      title: "Launch & Support",
-      description: "We help you launch, measure results, and refine over time for continuous improvement."
-    }
-  ];
-
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter || project.tags.includes(activeFilter));
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -132,31 +46,13 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Filters & Stats */}
+      {/* Stats Section */}
       <section className="py-6 sm:py-8 px-3 sm:px-4 border-b border-border">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={activeFilter === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setActiveFilter(category)}
-                  className="transition-all"
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-            
-            {/* Stats */}
-            <div className="text-xs sm:text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">{filteredProjects.length}</span> projects • 
-              AI & automation focused • 
-              Serving small businesses and creators
-            </div>
+          <div className="text-center text-xs sm:text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">5</span> projects • 
+            AI & automation focused • 
+            Serving small businesses and creators
           </div>
         </div>
       </section>
@@ -165,53 +61,163 @@ const Projects = () => {
       <section className="py-12 sm:py-20 px-2 sm:px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {filteredProjects.map((project, index) => (
-              <Card 
-                key={project.id} 
-                className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden opacity-0"
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-              >
-                {/* Project Image */}
-                <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+            
+            {/* Project 1 - TrapMachine35 */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
+                <img 
+                  src={project1Image} 
+                  alt="TrapMachine35 Automotive Content Brand Site"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TrapMachine35</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">Automotive Content Brand Site</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Built a high-energy, mobile-optimized site for an automotive content creator, integrating social media, lead capture, and a gallery for builds and collaborations.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Web Design</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Branding</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Creator</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">SEO</Badge>
                 </div>
+                <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  View Case Study
+                  <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
 
-                <CardHeader className="p-3 sm:p-4 md:p-6">
-                  <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">{project.client}</div>
-                  <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
+            {/* Project 2 - Faris Athletics */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
+                <img 
+                  src={project2Image} 
+                  alt="Faris Athletics Fitness Coaching Landing Page"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Faris Athletics</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">Fitness Coaching Landing Page</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Designed a conversion-focused landing page for a fitness coach with clear service packages, testimonials, and an intake form integrated with email automation.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Web Design</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Marketing Funnels</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Coaching</Badge>
+                </div>
+                <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  View Case Study
+                  <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
 
-                <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1 sm:gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+            {/* Project 3 - TFAY Autoworks */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
+                <img 
+                  src={project3Image} 
+                  alt="TFAY Autoworks Performance Shop Presence"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TFAY Autoworks</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">Performance Shop Presence</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Created a modern, performance-oriented website for a tuning shop showcasing services, before-and-after galleries, and online appointment requests.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Web Development</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Local Business</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Performance</Badge>
+                </div>
+                <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  View Case Study
+                  <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
 
-                  {/* CTA */}
-                  <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
-                    View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Project 4 - Local Service Business */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
+                <img 
+                  src={project4Image} 
+                  alt="Local Service Business AI Chat and Lead Capture"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Local Service Business</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">AI Chat & Lead Capture</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Implemented an AI-assisted FAQ/chat widget and automated lead intake forms that route inquiries to email and CRM, improving response speed and lead quality.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">AI Automation</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">No-Code</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Lead Gen</Badge>
+                </div>
+                <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  View Case Study
+                  <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Project 5 - Professional Services */}
+            <Card className="group hover:border-primary/50 transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-muted overflow-hidden">
+                <img 
+                  src={project5Image} 
+                  alt="Professional Services Internal Process Automation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Professional Services</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">Internal Process Automation</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Built simple dashboards and automations to streamline onboarding tasks, document handling, and internal communication using AI and low-code tools.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Automation</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">AI Workflows</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Operations</Badge>
+                </div>
+                <Button variant="ghost" className="w-full group/btn text-xs sm:text-sm h-8 sm:h-9">
+                  View Case Study
+                  <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </section>
 
-      {/* Case Study Template Section (Example) */}
+      {/* Case Study Template Section */}
       <section className="py-20 px-4 bg-card/50">
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-12 animate-fade-in">
@@ -336,26 +342,40 @@ const Projects = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {workProcess.map((process, index) => (
-              <div 
-                key={index}
-                className="relative text-center animate-fade-in opacity-0"
-                style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}
-              >
-                <div className="mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-primary-foreground text-2xl font-bold">
-                    {process.step}
-                  </div>
+            {/* Step 1 - Discover */}
+            <div className="relative text-center animate-fade-in">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-primary-foreground text-2xl font-bold">
+                  01
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{process.title}</h3>
-                <p className="text-muted-foreground">{process.description}</p>
-                
-                {/* Connector Arrow */}
-                {index < workProcess.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />
-                )}
               </div>
-            ))}
+              <h3 className="text-2xl font-bold mb-4">Discover</h3>
+              <p className="text-muted-foreground">We learn your business, goals, and pain points through collaborative discovery sessions.</p>
+              <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />
+            </div>
+
+            {/* Step 2 - Design & Build */}
+            <div className="relative text-center animate-fade-in">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-primary-foreground text-2xl font-bold">
+                  02
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Design & Build</h3>
+              <p className="text-muted-foreground">We design an AI-supported solution, build your site or automation, and iterate with your feedback.</p>
+              <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />
+            </div>
+
+            {/* Step 3 - Launch & Support */}
+            <div className="relative text-center animate-fade-in">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-primary-foreground text-2xl font-bold">
+                  03
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Launch & Support</h3>
+              <p className="text-muted-foreground">We help you launch, measure results, and refine over time for continuous improvement.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -371,24 +391,47 @@ const Projects = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index}
-                className="animate-fade-in opacity-0"
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-              >
-                <CardContent className="p-6 space-y-4">
-                  <div className="text-4xl text-primary/20">"</div>
-                  <p className="text-muted-foreground italic leading-relaxed">
-                    {testimonial.quote}
-                  </p>
-                  <div className="pt-4 border-t border-border">
-                    <div className="font-semibold">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.business}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Testimonial 1 */}
+            <Card className="animate-fade-in">
+              <CardContent className="p-6 space-y-4">
+                <div className="text-4xl text-primary/20">"</div>
+                <p className="text-muted-foreground italic leading-relaxed">
+                  Kyair Consulting helped us turn a basic idea into a polished online presence. The process was collaborative, and the final site has already started bringing in more leads.
+                </p>
+                <div className="pt-4 border-t border-border">
+                  <div className="font-semibold">Alex Martinez</div>
+                  <div className="text-sm text-muted-foreground">TrapMachine35</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 2 */}
+            <Card className="animate-fade-in">
+              <CardContent className="p-6 space-y-4">
+                <div className="text-4xl text-primary/20">"</div>
+                <p className="text-muted-foreground italic leading-relaxed">
+                  The AI automation tools they built for us have cut our response time in half. Our customers are happier and we're closing more deals.
+                </p>
+                <div className="pt-4 border-t border-border">
+                  <div className="font-semibold">Jordan Lee</div>
+                  <div className="text-sm text-muted-foreground">Local Service Provider</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 3 */}
+            <Card className="animate-fade-in">
+              <CardContent className="p-6 space-y-4">
+                <div className="text-4xl text-primary/20">"</div>
+                <p className="text-muted-foreground italic leading-relaxed">
+                  From concept to launch, Kyair made the whole process smooth. They understood our vision and delivered a site that truly represents our brand.
+                </p>
+                <div className="pt-4 border-t border-border">
+                  <div className="font-semibold">Taylor Faris</div>
+                  <div className="text-sm text-muted-foreground">Faris Athletics</div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
