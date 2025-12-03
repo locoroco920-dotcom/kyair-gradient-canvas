@@ -73,10 +73,12 @@ const Projects = () => {
                   <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">SEO</Badge>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
-                    View Case Study
-                    <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
-                  </Button>
+                  <a href="/documents/trapmachine-case-study.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
+                      View Case Study
+                      <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    </Button>
+                  </a>
                   <a href="https://trapmachine35.xyz" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                       Visit Project
