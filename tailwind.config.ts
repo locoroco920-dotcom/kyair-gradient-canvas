@@ -65,48 +65,78 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "fade-in": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "slide-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(40px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "glow": {
-          "0%, 100%": {
-            opacity: "1",
-          },
-          "50%": {
-            opacity: "0.7",
-          },
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -30px) scale(1.05)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.95)" },
+        },
+        "float-slower": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(-40px, -20px) scale(1.1)" },
+        },
+        "float-medium": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "25%": { transform: "translate(20px, -15px)" },
+          "75%": { transform: "translate(-15px, 10px)" },
+        },
+        "float-fast": {
+          "0%, 100%": { transform: "translateY(0) rotate(45deg)" },
+          "50%": { transform: "translateY(-20px) rotate(45deg)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "spin-slower": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "0.6", transform: "scale(1.2)" },
+        },
+        "ping-slow": {
+          "0%": { transform: "scale(1)", opacity: "0.8" },
+          "75%, 100%": { transform: "scale(2)", opacity: "0" },
+        },
+        "twinkle": {
+          "0%, 100%": { opacity: "0.2", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.5)" },
+        },
+        "twinkle-delayed": {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "0.9", transform: "scale(1.3)" },
+        },
+        "twinkle-slow": {
+          "0%, 100%": { opacity: "0.2", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.4)" },
+        },
+        "wave": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "wave-slow": {
+          "0%": { transform: "translateX(-25%)" },
+          "100%": { transform: "translateX(25%)" },
         },
       },
       animation: {
@@ -115,6 +145,19 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "float-slow": "float-slow 20s ease-in-out infinite",
+        "float-slower": "float-slower 25s ease-in-out infinite",
+        "float-medium": "float-medium 15s ease-in-out infinite",
+        "float-fast": "float-fast 4s ease-in-out infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "spin-slower": "spin-slower 30s linear infinite",
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "ping-slow": "ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "twinkle": "twinkle 3s ease-in-out infinite",
+        "twinkle-delayed": "twinkle-delayed 4s ease-in-out infinite 1s",
+        "twinkle-slow": "twinkle-slow 5s ease-in-out infinite 0.5s",
+        "wave": "wave 20s linear infinite",
+        "wave-slow": "wave-slow 30s ease-in-out infinite alternate",
       },
     },
   },
