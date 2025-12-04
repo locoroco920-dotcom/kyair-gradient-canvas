@@ -10,6 +10,8 @@ import FloatingCTA from "./components/FloatingCTA";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
+import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import Packages from "./pages/Packages";
 import Projects from "./pages/Projects";
@@ -30,6 +32,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/packages" element={<Packages />} />
             <Route path="/quote" element={<Quote />} />

@@ -1,12 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import kyairLogo from "@/assets/kyair-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setIsLoggedIn(!!session);
+      }
+    );
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsLoggedIn(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -55,6 +71,12 @@ const Navigation = () => {
                 Get a Quote
               </Button>
             </Link>
+            <Link to={isLoggedIn ? "/profile" : "/auth"} onClick={() => window.scrollTo(0, 0)}>
+              <Button variant="outline" size="sm" className="gap-2">
+                <User size={16} />
+                {isLoggedIn ? "Profile" : "Login"}
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,6 +107,12 @@ const Navigation = () => {
             <Link to="/quote" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}>
               <Button variant="gradient" size="sm" className="w-full">
                 Get a Quote
+              </Button>
+            </Link>
+            <Link to={isLoggedIn ? "/profile" : "/auth"} onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}>
+              <Button variant="outline" size="sm" className="w-full gap-2">
+                <User size={16} />
+                {isLoggedIn ? "Profile" : "Login"}
               </Button>
             </Link>
           </div>
