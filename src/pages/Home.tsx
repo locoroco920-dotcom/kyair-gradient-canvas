@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Brain, TrendingUp, BarChart3, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimatedBackground from "@/components/AnimatedBackground";
+
 const Home = () => {
   const services = [{
     icon: Brain,
@@ -33,7 +35,8 @@ const Home = () => {
     author: "Emily Rodriguez",
     role: "COO, ServicePro"
   }];
-  return <div className="min-h-screen">
+  return <div className="min-h-screen relative">
+      <AnimatedBackground />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-12 px-3 sm:pt-32 sm:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
