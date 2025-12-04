@@ -6,37 +6,67 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters"),
+});
 
 const Contact = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    company: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
+    setLoading(true);
+
+    try {
+      const validated = contactSchema.parse(formData);
+
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: validated.name,
+        email: validated.email,
+        company: validated.company || null,
+        message: validated.message,
       });
-      return;
+
+      if (error) {
+        throw new Error("Failed to submit form. Please try again.");
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you within 1-2 business days.",
+      });
+
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else if (error instanceof Error) {
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setLoading(false);
     }
-
-    // Success feedback
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 1-2 business days.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
@@ -81,12 +111,12 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
+                  <Label htmlFor="company">Company</Label>
                   <Input
-                    id="subject"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="How can we help?"
+                    id="company"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    placeholder="Your company name"
                   />
                 </div>
                 <div className="space-y-2">
@@ -100,9 +130,9 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" variant="gradient" size="lg" className="w-full group">
+                <Button type="submit" variant="gradient" size="lg" className="w-full group" disabled={loading}>
                   <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
