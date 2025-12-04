@@ -2,6 +2,7 @@ import { Check, Sparkles, Rocket, Zap, Palette, Globe, Bot, Video, Users, Coffee
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Packages = () => {
 
@@ -156,6 +157,7 @@ const Packages = () => {
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20 pb-12 sm:pb-20">
+      <AnimatedBackground />
       {/* Hero Section */}
       <section className="px-3 sm:px-4 py-12 sm:py-16">
         <div className="container mx-auto max-w-6xl">

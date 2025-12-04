@@ -2,6 +2,7 @@ import { Target, Lightbulb, Users, TrendingUp, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const About = () => {
   const strengths = [
@@ -29,6 +30,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+      <AnimatedBackground />
       {/* Mission & Vision */}
       <section className="px-3 sm:px-4 py-12 sm:py-20">
         <div className="container mx-auto max-w-4xl">

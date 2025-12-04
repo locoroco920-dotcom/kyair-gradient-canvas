@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
+import AnimatedBackground from "@/components/AnimatedBackground";
 const Projects = () => {
   return <div className="min-h-screen">
+      <AnimatedBackground />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-10 px-3 sm:pt-24 sm:pb-12 md:pt-32 md:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
@@ -41,7 +43,7 @@ const Projects = () => {
       <section className="py-6 sm:py-8 px-3 sm:px-4 border-b border-border">
         <div className="container mx-auto">
           <div className="text-center text-xs sm:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">7</span> projects • 
+            <span className="font-semibold text-foreground">8</span> projects • 
             AI & automation focused • 
             Serving small businesses and creators
           </div>
@@ -262,6 +264,35 @@ const Projects = () => {
                   <a href="https://tfnoonans.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
                       Visit Project
+                      <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project 8 - STI Group */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+                <img src="/images/project-stigroup.png" alt="STI Group IT Asset Management System" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">STI Group</div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">IT Asset Management System</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Bringing enterprise precision to IT asset management. We helped a fast-growing cybersecurity firm move from chaotic Excel spreadsheets to an automated, QR-code-driven inventory system.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Automation</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">QR Systems</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Cybersecurity</Badge>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a href="/documents/goofygoobers-case-study.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
+                      View Case Study
                       <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                     </Button>
                   </a>

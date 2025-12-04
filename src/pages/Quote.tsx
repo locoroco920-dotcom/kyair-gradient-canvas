@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 // Service definitions with pricing
 const PACKAGES = {
@@ -596,6 +597,7 @@ const Quote = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
+      <AnimatedBackground />
       <section className="px-3 sm:px-4 py-8 sm:py-12">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}

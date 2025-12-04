@@ -5,6 +5,7 @@ import { Brain, Target, TrendingUp, Zap, CheckCircle, ArrowRight } from "lucide-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingQuoteButton from "@/components/FloatingQuoteButton";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   const services = [
@@ -45,6 +46,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <AnimatedBackground />
       <Navigation />
       <FloatingQuoteButton />
 
