@@ -185,6 +185,43 @@ const Quote = () => {
   };
 
   const calculateTotal = () => {
+    // If a package is selected, use package pricing
+    if (quoteType && quoteType !== "custom") {
+      const pkg = PACKAGES[quoteType];
+      // Check if user has added/removed services from the package
+      const packageServices = new Set(pkg.includedServices);
+      const currentServices = new Set(selectedServices);
+      
+      // If services match package exactly, use package price
+      const hasExactMatch = pkg.includedServices.every(s => currentServices.has(s)) &&
+                           selectedServices.every(s => packageServices.has(s));
+      
+      if (hasExactMatch) {
+        return { oneTime: pkg.setup, monthly: pkg.monthly };
+      }
+      
+      // If modified from package, calculate base package + additions - removals
+      let oneTime = pkg.setup;
+      let monthly = pkg.monthly;
+      
+      // Add prices for services added beyond the package
+      selectedServices.forEach(serviceId => {
+        if (!packageServices.has(serviceId)) {
+          const service = getServiceById(serviceId);
+          if (service) {
+            if (service.recurring || billingType[serviceId] === "recurring") {
+              monthly += service.price;
+            } else {
+              oneTime += service.price;
+            }
+          }
+        }
+      });
+      
+      return { oneTime, monthly };
+    }
+
+    // Custom quote - calculate from individual services
     let oneTime = 0;
     let monthly = 0;
 
@@ -560,7 +597,7 @@ const Quote = () => {
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <section className="px-3 sm:px-4 py-8 sm:py-12">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <div className="text-center mb-8 animate-fade-in">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
@@ -574,101 +611,155 @@ const Quote = () => {
             </p>
           </div>
 
-          {/* Progress Bar */}
-          {currentStep < 8 && (
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium">Step {currentStep} of {STEPS.length - 1}</span>
-                <span className="text-sm text-muted-foreground">{STEPS[currentStep - 1]?.name}</span>
-              </div>
-              <Progress value={progressPercentage} className="h-2" />
-              
-              {/* Step indicators */}
-              <div className="flex justify-between mt-4 overflow-x-auto pb-2">
-                {STEPS.slice(0, -1).map((step) => (
-                  <button
-                    key={step.id}
-                    onClick={() => step.id <= currentStep && setCurrentStep(step.id)}
-                    disabled={step.id > currentStep}
-                    className={`flex flex-col items-center min-w-[60px] ${
-                      step.id === currentStep
-                        ? "text-primary"
-                        : step.id < currentStep
-                        ? "text-primary/60 cursor-pointer"
-                        : "text-muted-foreground/40"
-                    }`}
-                  >
-                    <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold mb-1 transition-colors ${
-                        step.id === currentStep
-                          ? "bg-primary text-primary-foreground"
-                          : step.id < currentStep
-                          ? "bg-primary/20 text-primary"
-                          : "bg-secondary text-muted-foreground"
-                      }`}
-                    >
-                      {step.id < currentStep ? <CheckCircle2 size={16} /> : step.id}
-                    </div>
-                    <span className="text-xs hidden sm:block">{step.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Running Total */}
-          {currentStep > 1 && currentStep < 8 && (
-            <Card className="mb-6 bg-gradient-primary/10 border-primary/20">
-              <CardContent className="p-4 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-2">
-                  <CreditCard className="text-primary" size={20} />
-                  <span className="font-medium">Running Total:</span>
-                </div>
-                <div className="flex gap-4 text-sm sm:text-base">
-                  <span><strong className="text-primary">${totals.oneTime}</strong> one-time</span>
-                  <span><strong className="text-primary">${totals.monthly}</strong>/month</span>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Main Content */}
-          <Card className="animate-slide-up shadow-lg">
-            <CardContent className="p-6 sm:p-8">
-              {renderCurrentStep()}
-
-              {/* Navigation Buttons */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+            {/* Main Content Column */}
+            <div>
+              {/* Progress Bar */}
               {currentStep < 8 && (
-                <div className="flex justify-between mt-8 pt-6 border-t border-border">
-                  <Button
-                    variant="outline"
-                    onClick={handleBack}
-                    disabled={currentStep === 1}
-                  >
-                    <ArrowLeft className="mr-2" size={16} />
-                    Back
-                  </Button>
-                  <Button
-                    variant="gradient"
-                    onClick={handleNext}
-                    disabled={!canProceed()}
-                  >
-                    {currentStep === 7 ? (
-                      <>
-                        Submit Quote
-                        <CheckCircle2 className="ml-2" size={16} />
-                      </>
-                    ) : (
-                      <>
-                        Next
-                        <ArrowRight className="ml-2" size={16} />
-                      </>
-                    )}
-                  </Button>
+                <div className="mb-8">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium">Step {currentStep} of {STEPS.length - 1}</span>
+                    <span className="text-sm text-muted-foreground">{STEPS[currentStep - 1]?.name}</span>
+                  </div>
+                  <Progress value={progressPercentage} className="h-2" />
+                  
+                  {/* Step indicators */}
+                  <div className="flex justify-between mt-4 overflow-x-auto pb-2">
+                    {STEPS.slice(0, -1).map((step) => (
+                      <button
+                        key={step.id}
+                        onClick={() => step.id <= currentStep && setCurrentStep(step.id)}
+                        disabled={step.id > currentStep}
+                        className={`flex flex-col items-center min-w-[60px] ${
+                          step.id === currentStep
+                            ? "text-primary"
+                            : step.id < currentStep
+                            ? "text-primary/60 cursor-pointer"
+                            : "text-muted-foreground/40"
+                        }`}
+                      >
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold mb-1 transition-colors ${
+                            step.id === currentStep
+                              ? "bg-primary text-primary-foreground"
+                              : step.id < currentStep
+                              ? "bg-primary/20 text-primary"
+                              : "bg-secondary text-muted-foreground"
+                          }`}
+                        >
+                          {step.id < currentStep ? <CheckCircle2 size={16} /> : step.id}
+                        </div>
+                        <span className="text-xs hidden sm:block">{step.name}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
-            </CardContent>
-          </Card>
+
+              {/* Running Total - Mobile Only */}
+              {currentStep > 1 && currentStep < 8 && (
+                <Card className="mb-6 bg-gradient-primary/10 border-primary/20 lg:hidden">
+                  <CardContent className="p-4 flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex items-center gap-2">
+                      <CreditCard className="text-primary" size={20} />
+                      <span className="font-medium">Running Total:</span>
+                    </div>
+                    <div className="flex gap-4 text-sm sm:text-base">
+                      <span><strong className="text-primary">${totals.oneTime}</strong> one-time</span>
+                      <span><strong className="text-primary">${totals.monthly}</strong>/month</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Main Content Card */}
+              <Card className="animate-slide-up shadow-lg">
+                <CardContent className="p-6 sm:p-8">
+                  {renderCurrentStep()}
+
+                  {/* Navigation Buttons */}
+                  {currentStep < 8 && (
+                    <div className="flex justify-between mt-8 pt-6 border-t border-border">
+                      <Button
+                        variant="outline"
+                        onClick={handleBack}
+                        disabled={currentStep === 1}
+                      >
+                        <ArrowLeft className="mr-2" size={16} />
+                        Back
+                      </Button>
+                      <Button
+                        variant="gradient"
+                        onClick={handleNext}
+                        disabled={!canProceed()}
+                      >
+                        {currentStep === 7 ? (
+                          <>
+                            Submit Quote
+                            <CheckCircle2 className="ml-2" size={16} />
+                          </>
+                        ) : (
+                          <>
+                            Next
+                            <ArrowRight className="ml-2" size={16} />
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sticky Sidebar - Consultation CTA */}
+            <div className="hidden lg:block">
+              <div className="sticky top-24">
+                <Card className="bg-gradient-primary/10 border-primary/20 shadow-lg">
+                  <CardContent className="p-6 text-center">
+                    <Calendar className="mx-auto text-primary mb-4" size={40} />
+                    <h3 className="text-lg font-semibold mb-2">Need Help Deciding?</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Schedule a free 15-minute consultation to discuss your project needs.
+                    </p>
+                    <Button variant="gradient" className="w-full" asChild>
+                      <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                        <Calendar className="mr-2" size={18} />
+                        Book Free Call
+                      </a>
+                    </Button>
+                    <p className="text-xs text-muted-foreground mt-3">No obligation • Quick response</p>
+                  </CardContent>
+                </Card>
+
+                {/* Running Total in Sidebar */}
+                {currentStep > 1 && currentStep < 8 && (
+                  <Card className="mt-4 bg-card/50">
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                        <CreditCard className="text-primary" size={18} />
+                        Your Quote
+                      </h4>
+                      {quoteType && quoteType !== "custom" && (
+                        <p className="text-xs text-muted-foreground mb-2">
+                          {PACKAGES[quoteType].name}
+                        </p>
+                      )}
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">One-time:</span>
+                          <span className="font-bold text-primary">${totals.oneTime}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Monthly:</span>
+                          <span className="font-bold text-primary">${totals.monthly}/mo</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
