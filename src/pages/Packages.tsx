@@ -173,8 +173,8 @@ const Packages = () => {
       </section>
 
       {/* How We Work Section */}
-      <section className="px-3 sm:px-4 py-8 sm:py-12 bg-card/30">
-        <div className="container mx-auto max-w-4xl">
+      <section className="px-3 sm:px-4 py-8 sm:py-12">
+        <div className="container mx-auto max-w-4xl backdrop-blur-sm bg-background/20 rounded-2xl p-6 sm:p-8 border border-border/30">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">How We Work</h2>
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground">
             <p>
@@ -209,7 +209,7 @@ const Packages = () => {
             {subscriptionPackages.map((pkg, index) => (
               <Card
                 key={index}
-                className={`relative animate-slide-up ${
+                className={`relative animate-slide-up backdrop-blur-sm bg-background/30 border-border/50 ${
                   pkg.popular ? "border-primary/50 shadow-lg md:scale-105" : ""
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -262,7 +262,7 @@ const Packages = () => {
       </section>
 
       {/* À La Carte Services */}
-      <section className="px-3 sm:px-4 py-12 sm:py-16 bg-card/30">
+      <section className="px-3 sm:px-4 py-12 sm:py-16">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
@@ -275,7 +275,7 @@ const Packages = () => {
 
           <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
             {aLaCarteServices.map((category, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-3 sm:px-4">
+              <AccordionItem key={index} value={`item-${index}`} className="border border-border/50 rounded-lg px-3 sm:px-4 backdrop-blur-sm bg-background/20">
                 <AccordionTrigger className="hover:no-underline py-3 sm:py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
@@ -287,7 +287,7 @@ const Packages = () => {
                 <AccordionContent className="pt-2 pb-3 sm:pb-4">
                   <div className="space-y-3 sm:space-y-4">
                     {category.services.map((service, i) => (
-                      <div key={i} className="flex justify-between items-start gap-3 pb-3 border-b border-border last:border-0 last:pb-0">
+                      <div key={i} className="flex justify-between items-start gap-3 pb-3 border-b border-border/50 last:border-0 last:pb-0">
                         <div className="flex-1">
                           <h4 className="text-xs sm:text-sm font-semibold mb-1">{service.name}</h4>
                           <p className="text-xs text-muted-foreground">{service.description}</p>
@@ -317,7 +317,7 @@ const Packages = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {industryPackages.map((industry, index) => (
-              <Card key={index} className="animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} className="animate-slide-up backdrop-blur-sm bg-background/30 border-border/50" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader className="pb-3 sm:pb-4 px-3 sm:px-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-2 sm:mb-3">
                     <industry.icon className="text-primary-foreground" size={22} />
@@ -339,7 +339,7 @@ const Packages = () => {
             ))}
           </div>
 
-          <Card className="bg-gradient-primary/10 border-primary/20">
+          <Card className="backdrop-blur-sm bg-gradient-primary/10 border-primary/20">
             <CardContent className="p-4 sm:p-6 text-center">
               <h3 className="text-base sm:text-lg font-semibold mb-2">Other Industries – Custom Solutions</h3>
               <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
@@ -354,8 +354,8 @@ const Packages = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="px-3 sm:px-4 py-12 sm:py-16 bg-card/30">
-        <div className="container mx-auto max-w-3xl text-center">
+      <section className="px-3 sm:px-4 py-12 sm:py-16">
+        <div className="container mx-auto max-w-3xl text-center backdrop-blur-sm bg-background/20 rounded-2xl p-8 sm:p-12 border border-border/30">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
             Not Sure What You Need?
           </h2>
