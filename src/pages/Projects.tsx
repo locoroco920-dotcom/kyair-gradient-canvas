@@ -58,7 +58,7 @@ const Projects = () => {
             {/* Project 1 - TrapMachine35 */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
             <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
-                <img alt="TrapMachine35 Automotive Content Brand Site" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/9386efc8-7bdb-4f8c-ae0d-bec0ac456895.png" />
+                <img alt="TrapMachine35 Automotive Content Brand Site" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/b6a9d4df-879a-4626-bc82-e3f5fbf501ec.png" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TrapMachine35</div>
@@ -160,7 +160,7 @@ const Projects = () => {
             {/* Project 4 - Murray the Snow Egret */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
             <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
-                <img src="/images/project-murray.jpg" alt="Murray the Snow Egret Mascot Animation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+                <img alt="Murray the Snow Egret Mascot Animation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/86a36b32-24be-449d-a410-bd5fff67e64d.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Meadowlands Chamber of Commerce</div>
