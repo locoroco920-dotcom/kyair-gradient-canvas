@@ -250,7 +250,7 @@ const Packages = () => {
                     className="w-full mt-3 sm:mt-4 text-xs sm:text-sm"
                     asChild
                   >
-                    <a href="/quote">Get Started</a>
+                    <a href={`/quote?package=${pkg.name.toLowerCase().replace(' plan', '')}`}>Get Started</a>
                   </Button>
                 </CardContent>
               </Card>
