@@ -58,7 +58,7 @@ const Projects = () => {
             {/* Project 1 - Exotics Hunter (Test Case) */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
               <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
-                <img src="/images/project-exoticshunter.png" alt="Exotics Hunter AI Chatbot Solution" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+                <img alt="Exotics Hunter AI Chatbot Solution" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/82f5c720-6382-4cf8-aab5-5f9fe32c6ecd.png" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="flex items-center gap-2 mb-1 sm:mb-2">
@@ -518,7 +518,7 @@ const Projects = () => {
                   Kyair Consulting helped us turn a basic idea into a polished online presence. The process was collaborative, and the final site has already started bringing in more leads.
                 </p>
                 <div className="pt-4 border-t border-border/50">
-                  <div className="font-semibold">Alex Martinez</div>
+                  <div className="font-semibold">Kyle </div>
                   <div className="text-sm text-muted-foreground">TrapMachine35</div>
                 </div>
               </CardContent>
@@ -547,7 +547,7 @@ const Projects = () => {
                 </p>
                 <div className="pt-4 border-t border-border/50">
                   <div className="font-semibold">Taylor Faris</div>
-                  <div className="text-sm text-muted-foreground">Faris Athletics</div>
+                  <div className="text-sm text-muted-foreground">Faris Fitness Athletics</div>
                 </div>
               </CardContent>
             </Card>
