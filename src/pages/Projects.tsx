@@ -43,7 +43,7 @@ const Projects = () => {
       <section className="py-6 sm:py-8 px-3 sm:px-4 border-b border-border">
         <div className="container mx-auto">
           <div className="text-center text-xs sm:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">8</span> projects • 
+            <span className="font-semibold text-foreground">9</span> projects • 
             AI & automation focused • 
             Serving small businesses and creators
           </div>
@@ -55,9 +55,41 @@ const Projects = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             
-            {/* Project 1 - TrapMachine35 */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 1 - Exotics Hunter (Test Case) */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
+                <img src="/images/project-exoticshunter.png" alt="Exotics Hunter AI Chatbot Solution" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+              </div>
+              <CardHeader className="p-3 sm:p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                  <div className="text-xs sm:text-sm text-primary font-medium">Exotics Hunter</div>
+                  <Badge className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 hover:bg-red-600">Test Case</Badge>
+                </div>
+                <CardTitle className="text-base sm:text-lg md:text-xl leading-tight">AI Chatbot for Luxury Auto Dealership</CardTitle>
+                <CardDescription className="line-clamp-2 md:line-clamp-3 text-xs sm:text-sm">
+                  Implemented an AI-powered chatbot for a high-end exotic car dealership to handle customer inquiries about service history, maintenance schedules, and upgrade recommendations—reducing staff workload and speeding up response times.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 sm:space-y-3 md:space-y-4 p-3 sm:p-4 md:p-6 pt-0">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">AI Chatbot</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Automotive</Badge>
+                  <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">Customer Service</Badge>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a href="/documents/exoticshunter-case-study.pdf" download className="w-full">
+                    <Button variant="outline" className="w-full text-xs sm:text-sm h-8 sm:h-9">
+                      View Case Study
+                      <ExternalLink className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project 2 - TrapMachine35 */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img alt="TrapMachine35 Automotive Content Brand Site" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/b6a9d4df-879a-4626-bc82-e3f5fbf501ec.png" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -91,9 +123,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 2 - Faris Athletics */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 3 - Faris Athletics */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img src="/images/project-faris.jpg" alt="Faris Athletics Fitness Coaching Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -124,9 +156,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 3 - TFAY Autoworks */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 4 - TFAY Autoworks */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img src="/images/project-tfay.jpg" alt="TFAY Autoworks Performance Shop Presence" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -157,9 +189,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 4 - Murray the Snow Egret */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 5 - Murray the Snow Egret */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img alt="Murray the Snow Egret Mascot Animation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/86a36b32-24be-449d-a410-bd5fff67e64d.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -184,9 +216,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 5 - Local Service Business */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 6 - Local Service Business */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img src="/images/project-ai-chat.jpg" alt="Local Service Business AI Chat and Lead Capture" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -211,9 +243,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 6 - Professional Services */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-            <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 7 - Professional Services */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img src="/images/project-automation.jpg" alt="Professional Services Internal Process Automation" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -238,9 +270,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 7 - Noonan's Bar and Grill */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 8 - Noonan's Bar and Grill */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img alt="Noonan's Bar and Grill Restaurant Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/d9f709cc-89a8-45a0-a07d-33e5b6b519b6.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -271,9 +303,9 @@ const Projects = () => {
               </CardContent>
             </Card>
 
-            {/* Project 8 - STI Group */}
-            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
-              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
+            {/* Project 9 - STI Group */}
+            <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
+              <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
                 <img src="/images/project-stigroup.png" alt="STI Group IT Asset Management System" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -305,7 +337,7 @@ const Projects = () => {
       </section>
 
       {/* Case Study Template Section */}
-      <section className="py-20 px-4 bg-card/50">
+      <section className="py-20 px-4 backdrop-blur-sm bg-background/20">
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-12 animate-fade-in">
             <div className="text-center">
@@ -316,15 +348,15 @@ const Projects = () => {
 
             {/* Quick Facts */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 rounded-lg bg-background border border-border">
+              <div className="text-center p-6 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                 <div className="text-sm text-muted-foreground mb-1">Industry</div>
                 <div className="font-semibold">Automotive / Creator</div>
               </div>
-              <div className="text-center p-6 rounded-lg bg-background border border-border">
+              <div className="text-center p-6 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                 <div className="text-sm text-muted-foreground mb-1">Services</div>
                 <div className="font-semibold">Web Design, Branding, SEO</div>
               </div>
-              <div className="text-center p-6 rounded-lg bg-background border border-border">
+              <div className="text-center p-6 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                 <div className="text-sm text-muted-foreground mb-1">Timeline</div>
                 <div className="font-semibold">4 Weeks</div>
               </div>
@@ -367,19 +399,19 @@ const Projects = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4">What We Built</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 rounded-lg bg-background border border-border">
+                <div className="p-4 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                   <div className="font-semibold mb-2">Responsive Website</div>
                   <p className="text-sm text-muted-foreground">Mobile-optimized design with dynamic galleries</p>
                 </div>
-                <div className="p-4 rounded-lg bg-background border border-border">
+                <div className="p-4 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                   <div className="font-semibold mb-2">Lead Capture System</div>
                   <p className="text-sm text-muted-foreground">Integrated forms for sponsorship and collaboration inquiries</p>
                 </div>
-                <div className="p-4 rounded-lg bg-background border border-border">
+                <div className="p-4 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                   <div className="font-semibold mb-2">Social Integration</div>
                   <p className="text-sm text-muted-foreground">Live feeds from Instagram and YouTube</p>
                 </div>
-                <div className="p-4 rounded-lg bg-background border border-border">
+                <div className="p-4 rounded-lg backdrop-blur-sm bg-background/30 border border-border/50">
                   <div className="font-semibold mb-2">Brand Identity</div>
                   <p className="text-sm text-muted-foreground">Custom logo and visual style guide</p>
                 </div>
@@ -468,7 +500,7 @@ const Projects = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-card/50">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 backdrop-blur-sm bg-background/20">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
@@ -479,13 +511,13 @@ const Projects = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {/* Testimonial 1 */}
-            <Card className="animate-fade-in">
+            <Card className="animate-fade-in backdrop-blur-sm bg-background/30 border-border/50">
               <CardContent className="p-6 space-y-4">
                 <div className="text-4xl text-primary/20">"</div>
                 <p className="text-muted-foreground italic leading-relaxed">
                   Kyair Consulting helped us turn a basic idea into a polished online presence. The process was collaborative, and the final site has already started bringing in more leads.
                 </p>
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-border/50">
                   <div className="font-semibold">Alex Martinez</div>
                   <div className="text-sm text-muted-foreground">TrapMachine35</div>
                 </div>
@@ -493,13 +525,13 @@ const Projects = () => {
             </Card>
 
             {/* Testimonial 2 */}
-            <Card className="animate-fade-in">
+            <Card className="animate-fade-in backdrop-blur-sm bg-background/30 border-border/50">
               <CardContent className="p-6 space-y-4">
                 <div className="text-4xl text-primary/20">"</div>
                 <p className="text-muted-foreground italic leading-relaxed">
                   The AI automation tools they built for us have cut our response time in half. Our customers are happier and we're closing more deals.
                 </p>
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-border/50">
                   <div className="font-semibold">Jordan Lee</div>
                   <div className="text-sm text-muted-foreground">Local Service Provider</div>
                 </div>
@@ -507,13 +539,13 @@ const Projects = () => {
             </Card>
 
             {/* Testimonial 3 */}
-            <Card className="animate-fade-in">
+            <Card className="animate-fade-in backdrop-blur-sm bg-background/30 border-border/50">
               <CardContent className="p-6 space-y-4">
                 <div className="text-4xl text-primary/20">"</div>
                 <p className="text-muted-foreground italic leading-relaxed">
                   From concept to launch, Kyair made the whole process smooth. They understood our vision and delivered a site that truly represents our brand.
                 </p>
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-border/50">
                   <div className="font-semibold">Taylor Faris</div>
                   <div className="text-sm text-muted-foreground">Faris Athletics</div>
                 </div>
