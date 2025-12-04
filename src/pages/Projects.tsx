@@ -126,7 +126,7 @@ const Projects = () => {
             {/* Project 3 - Faris Athletics */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
               <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
-                <img src="/images/project-faris.jpg" alt="Faris Athletics Fitness Coaching Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+                <img alt="Faris Athletics Fitness Coaching Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/55e04982-cd62-4723-9c41-bd61df640281.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Faris Athletics</div>
@@ -159,7 +159,7 @@ const Projects = () => {
             {/* Project 4 - TFAY Autoworks */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden backdrop-blur-sm bg-background/30 border-border/50">
               <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden">
-                <img src="/images/project-tfay.jpg" alt="TFAY Autoworks Performance Shop Presence" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+                <img alt="TFAY Autoworks Performance Shop Presence" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/afc5260a-7220-4794-87d0-e9d80b2a6fdb.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">TFAY Autoworks</div>
