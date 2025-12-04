@@ -241,7 +241,7 @@ const Projects = () => {
             {/* Project 7 - Noonan's Bar and Grill */}
             <Card className="hover:border-primary/50 transition-all duration-300 overflow-hidden">
               <div className="relative h-40 sm:h-52 md:h-64 overflow-hidden bg-card">
-                <img src="/images/project-noonans.jpg" alt="Noonan's Bar and Grill Restaurant Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" />
+                <img alt="Noonan's Bar and Grill Restaurant Landing Page" className="absolute inset-0 w-full h-full object-cover block z-10 opacity-100" src="/lovable-uploads/d9f709cc-89a8-45a0-a07d-33e5b6b519b6.jpg" />
               </div>
               <CardHeader className="p-3 sm:p-4 md:p-6">
                 <div className="text-xs sm:text-sm text-primary font-medium mb-1 sm:mb-2">Noonan's Bar and Grill</div>
