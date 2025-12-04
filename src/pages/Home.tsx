@@ -80,7 +80,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {services.map((service, index) => <Card key={index} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in" style={{
+            {services.map((service, index) => <Card key={index} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in backdrop-blur-sm bg-background/30 border-border/50" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
@@ -96,14 +96,14 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-card">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 backdrop-blur-sm bg-background/20">
         <div className="container mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">What Our Clients Say</h2>
             <p className="text-sm sm:text-base text-muted-foreground px-2">Real results from real businesses</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {testimonials.map((testimonial, index) => <Card key={index} className="animate-fade-in" style={{
+            {testimonials.map((testimonial, index) => <Card key={index} className="animate-fade-in backdrop-blur-sm bg-background/30 border-border/50" style={{
             animationDelay: `${index * 150}ms`
           }}>
                 <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
@@ -121,7 +121,7 @@ const Home = () => {
       {/* Final CTA Section */}
       <section className="py-12 sm:py-20 px-3 sm:px-4">
         <div className="container mx-auto">
-          <Card className="relative overflow-hidden border-primary/20">
+          <Card className="relative overflow-hidden border-primary/20 backdrop-blur-sm bg-background/30">
             <div className="absolute inset-0 bg-gradient-primary opacity-5" />
             <CardContent className="relative z-10 p-6 sm:p-8 text-center space-y-3 sm:space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">Ready to Elevate Your Business?</h2>
