@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const signupSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -124,6 +125,7 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 flex items-center justify-center">
+      <AnimatedBackground />
       <div className="container mx-auto px-3 sm:px-4 max-w-md">
         <Card className="animate-fade-in">
           <CardHeader className="text-center">
