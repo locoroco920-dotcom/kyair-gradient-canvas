@@ -74,8 +74,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <SEO 
-        title="Contact Kyair Consulting | AI Consulting & IT Support in New Jersey"
-        description="Get in touch with Kyair Consulting for AI consulting, workflow automation, and IT support services in New Jersey. Request a free consultation today."
+        title="Contact Kyair Consulting | AI Consulting & IT Support"
+        description="Contact Kyair Consulting for AI consulting, AI automation, and IT support."
         canonical="/contact"
       />
       <AnimatedBackground />

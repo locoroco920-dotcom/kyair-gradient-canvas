@@ -156,7 +156,7 @@ const Home = () => {
     <div className="min-h-screen relative">
       <SEO 
         title="AI Consulting, Automation & IT Support in New Jersey | Kyair Consulting"
-        description="Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey. We help businesses streamline operations, enhance marketing performance, and scale using AI-powered solutions."
+        description="Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey."
         canonical="/"
         jsonLd={[faqSchema]}
       />
