@@ -4,6 +4,70 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import SEO from "@/components/SEO";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AI consulting and how can it help my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consulting helps businesses identify opportunities to implement artificial intelligence solutions that automate processes, improve decision-making, and drive growth. Kyair Consulting analyzes your operations and recommends tailored AI tools and strategies to increase efficiency and reduce costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI automation services does Kyair Consulting offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyair Consulting offers comprehensive AI automation services including workflow automation, intelligent process automation, AI-powered chatbots, automated data analysis, and custom AI integrations. We help businesses streamline operations and eliminate repetitive manual tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide IT support services in New Jersey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Kyair Consulting provides IT support and technical services throughout New Jersey. Our services include system implementation, technical troubleshooting, software integration, and ongoing IT maintenance to keep your business running smoothly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI advertising optimization work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI advertising optimization uses machine learning algorithms to analyze campaign performance data, identify patterns, and automatically adjust targeting, bidding, and creative elements. This results in higher ROI, lower cost per acquisition, and more qualified leads for your business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries does Kyair Consulting work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyair Consulting works with businesses across multiple industries including automotive, healthcare, e-commerce, professional services, and manufacturing. Our AI solutions and automation services are customized to meet the unique needs of each industry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to implement AI solutions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Implementation timelines vary based on project complexity. Simple AI automations can be deployed in 2-4 weeks, while comprehensive AI integrations may take 2-3 months. We provide detailed project timelines during our initial consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do AI consulting services cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consulting costs depend on project scope and complexity. Kyair Consulting offers flexible packages from project-based engagements to ongoing retainer arrangements. Contact us for a free consultation and custom quote tailored to your business needs."
+      }
+    }
+  ]
+};
 
 const Home = () => {
   const services = [
@@ -90,6 +154,12 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative">
+      <SEO 
+        title="AI Consulting, Automation & IT Support in New Jersey | Kyair Consulting"
+        description="Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey. We help businesses streamline operations, enhance marketing performance, and scale using AI-powered solutions."
+        canonical="/"
+        jsonLd={[faqSchema]}
+      />
       <AnimatedBackground />
       
       {/* Hero Section */}

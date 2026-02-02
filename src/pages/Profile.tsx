@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, Save, LogOut } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface Profile {
   id: string;
@@ -128,6 +129,12 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-background py-20 px-4">
+      <SEO 
+        title="Your Profile | Kyair Consulting Client Portal"
+        description="Manage your Kyair Consulting client profile and account settings."
+        canonical="/profile"
+        noindex={true}
+      />
       <div className="container max-w-2xl mx-auto">
         <Card className="border-border/50 bg-card/50 backdrop-blur">
           <CardHeader>
