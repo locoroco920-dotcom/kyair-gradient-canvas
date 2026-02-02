@@ -8,3 +8,9 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>
 );
+
+// Used by build-time prerendering to wait until the app + react-helmet has updated the <head>.
+// This does not affect runtime behavior.
+requestAnimationFrame(() => {
+  document.dispatchEvent(new Event("render-event"));
+});
