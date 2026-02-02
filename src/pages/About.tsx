@@ -33,7 +33,7 @@ const About = () => {
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <SEO 
         title="About Kyair Consulting | AI Consulting & Automation Experts"
-        description="Learn about Kyair Consulting—New Jersey’s AI consulting and automation firm helping businesses implement intelligent tools, streamline workflows, and scale efficiently."
+        description="Learn about Kyair Consulting—New Jersey’s AI consulting and automation firm helping businesses implement intelligent tools and scale efficiently."
         canonical="/about"
       />
       <AnimatedBackground />
