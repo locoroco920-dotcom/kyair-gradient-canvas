@@ -9,8 +9,6 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
-// Used by build-time prerendering to wait until the app + react-helmet has updated the <head>.
-// This does not affect runtime behavior.
-requestAnimationFrame(() => {
-  document.dispatchEvent(new Event("render-event"));
-});
+// Build-time prerendering waits for a custom DOM event ("render-event").
+// We dispatch it inside the router *after* the route + Helmet have mounted,
+// so the prerendered HTML contains the correct per-route <head>.
