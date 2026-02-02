@@ -9,8 +9,8 @@ const Projects = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Client Projects | AI Automation & Integration Work in New Jersey"
-        description="Explore Kyair Consulting client projects focused on AI automation, intelligent integration, and performance optimization for businesses in New Jersey."
+        title="Client Projects | AI Automation & Integration Work"
+        description="Explore client projects showcasing AI automation and intelligent integration solutions."
         canonical="/projects"
       />
       <AnimatedBackground />

@@ -159,8 +159,8 @@ const Packages = () => {
   return (
     <div className="min-h-screen pt-16 sm:pt-20 pb-12 sm:pb-20">
       <SEO 
-        title="AI Consulting & Automation Packages | Kyair Consulting New Jersey"
-        description="Choose from flexible AI consulting and automation packages designed for New Jersey businesses. Start with strategy, automation, or full AI integration."
+        title="AI Consulting & Automation Packages | Kyair Consulting"
+        description="Choose from flexible AI consulting and automation packages tailored for business growth."
         canonical="/packages"
       />
       <AnimatedBackground />
