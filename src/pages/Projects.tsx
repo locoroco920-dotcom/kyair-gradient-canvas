@@ -4,8 +4,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import SEO from "@/components/SEO";
 const Projects = () => {
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
+      <SEO 
+        title="Client Projects | AI Automation & Intelligent Integration Solutions | Kyair Consulting"
+        description="Explore Kyair Consulting's portfolio of AI-powered projects, web experiences, and automation solutions. See real examples of how we help businesses grow with AI."
+        canonical="/projects"
+      />
       <AnimatedBackground />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-10 px-3 sm:pt-24 sm:pb-12 md:pt-32 md:pb-20 sm:px-4">
@@ -581,6 +588,7 @@ const Projects = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
 export default Projects;

@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Mail, Phone, Building, MessageSquare } from "lucide-react";
 import { format } from "date-fns";
+import SEO from "@/components/SEO";
 
 interface ContactSubmission {
   id: string;
@@ -121,6 +122,12 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-background py-20 px-4">
+      <SEO 
+        title="Admin Dashboard | Kyair Consulting"
+        description="Kyair Consulting admin dashboard for managing contact submissions and client inquiries."
+        canonical="/admin"
+        noindex={true}
+      />
       <div className="container max-w-6xl mx-auto space-y-8">
         <div>
           <h1 className="text-3xl font-bold">Admin Dashboard</h1>

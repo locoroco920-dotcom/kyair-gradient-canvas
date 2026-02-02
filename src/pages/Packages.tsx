@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import SEO from "@/components/SEO";
 
 const Packages = () => {
 
@@ -157,6 +158,11 @@ const Packages = () => {
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20 pb-12 sm:pb-20">
+      <SEO 
+        title="AI Consulting & Automation Packages | Kyair Consulting"
+        description="Explore Kyair Consulting's affordable AI consulting, automation, and web development packages. Transparent pricing for businesses in New Jersey and beyond."
+        canonical="/packages"
+      />
       <AnimatedBackground />
       {/* Hero Section */}
       <section className="px-3 sm:px-4 py-12 sm:py-16">

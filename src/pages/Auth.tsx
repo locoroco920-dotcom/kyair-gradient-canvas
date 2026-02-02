@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import SEO from "@/components/SEO";
 
 const signupSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -125,6 +126,12 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 flex items-center justify-center">
+      <SEO 
+        title="Login | Kyair Consulting Client Portal"
+        description="Sign in to your Kyair Consulting client account to manage your AI consulting projects, view quotes, and access support."
+        canonical="/auth"
+        noindex={true}
+      />
       <AnimatedBackground />
       <div className="container mx-auto px-3 sm:px-4 max-w-md">
         <Card className="animate-fade-in">
