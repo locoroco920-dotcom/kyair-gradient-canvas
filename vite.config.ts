@@ -20,6 +20,12 @@ export default defineConfig(({ mode }) => ({
         renderer: "@prerenderer/renderer-puppeteer",
         rendererOptions: {
           renderAfterDocumentEvent: "render-event",
+          timeout: 30000,
+          headless: true,
+        },
+        postProcess(renderedRoute) {
+          // Log which routes were prerendered (visible in build logs)
+          console.log(`[Prerender] Captured: ${renderedRoute.route}`);
         },
       }),
   ].filter(Boolean),
