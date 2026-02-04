@@ -156,12 +156,39 @@ const Packages = () => {
   ];
 
 
+  const packagesSchema = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": "https://kyairconsulting.com/packages",
+    "name": "AI Consulting & Automation Packages",
+    "description": "Choose from flexible AI consulting and automation packages tailored for business growth.",
+    "url": "https://kyairconsulting.com/packages",
+    "provider": {
+      "@id": "https://kyairconsulting.com/#organization"
+    },
+    "itemListElement": subscriptionPackages.map((pkg, index) => ({
+      "@type": "Offer",
+      "position": index + 1,
+      "name": pkg.name,
+      "description": pkg.tagline,
+      "price": pkg.monthly.replace("$", "").replace("/mo", ""),
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": pkg.monthly.replace("$", "").replace("/mo", ""),
+        "priceCurrency": "USD",
+        "unitText": "MONTH"
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen pt-16 sm:pt-20 pb-12 sm:pb-20">
       <SEO 
         title="AI Consulting & Automation Packages | Kyair Consulting"
-        description="Choose from flexible AI consulting and automation packages tailored for business growth."
+        description="Choose from flexible AI consulting and automation packages tailored for business growth. Launch, Growth, and Automation plans available."
         canonical="/packages"
+        jsonLd={[packagesSchema]}
       />
       <AnimatedBackground />
       {/* Hero Section */}

@@ -6,6 +6,24 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import AnimatedBackground from "@/components/AnimatedBackground";
 import SEO from "@/components/SEO";
 
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://kyairconsulting.com/",
+  "name": "AI Consulting, Automation & IT Support in New Jersey | Kyair Consulting",
+  "description": "Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey.",
+  "url": "https://kyairconsulting.com/",
+  "isPartOf": {
+    "@id": "https://kyairconsulting.com/#website"
+  },
+  "about": {
+    "@id": "https://kyairconsulting.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://kyairconsulting.com/#organization"
+  }
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -165,7 +183,7 @@ const Home = () => {
         title="AI Consulting, Automation & IT Support in New Jersey | Kyair Consulting"
         description="Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey."
         canonical="/"
-        jsonLd={[faqSchema]}
+        jsonLd={[homePageSchema, faqSchema]}
       />
       <AnimatedBackground />
       

@@ -64,18 +64,16 @@ const About = () => {
   const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": "https://kyairconsulting.com/about",
     "mainEntityOfPage": "https://kyairconsulting.com/about",
     "name": "About Kyair Consulting",
     "description": "Learn about Kyair Consulting—an AI consulting and automation firm in Bergen County, New Jersey, specializing in workflow automation, AI integration, and data-driven performance solutions.",
     "url": "https://kyairconsulting.com/about",
+    "isPartOf": {
+      "@id": "https://kyairconsulting.com/#website"
+    },
     "publisher": {
-      "@type": "Organization",
-      "name": "Kyair Consulting",
-      "url": "https://kyairconsulting.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://kyairconsulting.com/favicon.png"
-      }
+      "@id": "https://kyairconsulting.com/#organization"
     }
   };
 

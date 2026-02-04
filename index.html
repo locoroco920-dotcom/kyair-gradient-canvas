@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <!-- Intentionally minimal defaults.
-         Per-route title/description/canonical/OG/Twitter are injected at build-time (prerender) via react-helmet-async. -->
-    <!-- Intentionally minimal defaults.
          Per-route title/description/canonical/OG/Twitter are injected at build-time (prerender)
          via react-helmet-async so "View Page Source" contains route-specific metadata. -->
     
@@ -15,21 +13,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Global JSON-LD Structured Data (Organization, LocalBusiness, Service, WebSite) -->
+    <!-- Global JSON-LD Structured Data with stable @id references -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://kyairconsulting.com/#organization",
       "name": "Kyair Consulting",
       "url": "https://kyairconsulting.com",
-      "logo": "https://kyairconsulting.com/favicon.png",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://kyairconsulting.com/#logo",
+        "url": "https://kyairconsulting.com/favicon.png",
+        "contentUrl": "https://kyairconsulting.com/favicon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://kyairconsulting.com/og-image-new.png",
       "description": "Kyair Consulting is a leading AI consulting company in New Jersey providing AI automation, workflow integration, IT support, and AI-powered advertising optimization services.",
       "email": "kyairconsulting@gmail.com",
       "telephone": "+1-201-739-5672",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Bergen County",
         "addressRegion": "NJ",
         "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "New Jersey"
       },
       "sameAs": [],
       "knowsAbout": [
@@ -49,15 +61,16 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://kyairconsulting.com/#localbusiness",
       "name": "Kyair Consulting",
       "image": "https://kyairconsulting.com/og-image-new.png",
       "description": "Kyair Consulting provides AI consulting, workflow automation, intelligent integration, and IT support services in New Jersey.",
-      "@id": "https://kyairconsulting.com",
       "url": "https://kyairconsulting.com",
       "telephone": "+1-201-739-5672",
       "email": "kyairconsulting@gmail.com",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Bergen County",
         "addressRegion": "New Jersey",
         "addressCountry": "US"
       },
@@ -65,7 +78,10 @@
         "@type": "State",
         "name": "New Jersey"
       },
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://kyairconsulting.com/#organization"
+      }
     }
     </script>
 
@@ -73,13 +89,39 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://kyairconsulting.com/#website",
       "name": "Kyair Consulting",
       "url": "https://kyairconsulting.com",
       "description": "AI Consulting, Automation & IT Support Services in New Jersey",
       "publisher": {
-        "@type": "Organization",
-        "name": "Kyair Consulting"
+        "@id": "https://kyairconsulting.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://kyairconsulting.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://kyairconsulting.com/#service",
+      "name": "Kyair Consulting - AI Consulting Services",
+      "provider": {
+        "@id": "https://kyairconsulting.com/#organization"
+      },
+      "serviceType": ["AI Consulting", "Workflow Automation", "IT Support", "AI Advertising Optimization"],
+      "areaServed": {
+        "@type": "State",
+        "name": "New Jersey"
+      },
+      "description": "Expert AI consulting, workflow automation, intelligent integration, and IT support services for businesses in New Jersey."
     }
     </script>
   </head>

@@ -5,13 +5,29 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import SEO from "@/components/SEO";
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://kyairconsulting.com/projects",
+  "name": "Client Projects | AI Automation & Integration Work",
+  "description": "Explore client projects showcasing AI automation and intelligent integration solutions by Kyair Consulting.",
+  "url": "https://kyairconsulting.com/projects",
+  "isPartOf": {
+    "@id": "https://kyairconsulting.com/#website"
+  },
+  "publisher": {
+    "@id": "https://kyairconsulting.com/#organization"
+  }
+};
+
 const Projects = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Client Projects | AI Automation & Integration Work"
-        description="Explore client projects showcasing AI automation and intelligent integration solutions."
+        title="Client Projects | AI Automation & Integration Work | Kyair Consulting"
+        description="Explore client projects showcasing AI automation, intelligent integration, and web development solutions by Kyair Consulting in New Jersey."
         canonical="/projects"
+        jsonLd={[projectsSchema]}
       />
       <AnimatedBackground />
       {/* Hero Section */}
