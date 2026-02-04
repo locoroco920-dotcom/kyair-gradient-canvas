@@ -111,6 +111,21 @@ const STEPS = [
   { id: 8, name: "Schedule", description: "Book a consultation" },
 ];
 
+const quotePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://kyairconsulting.com/quote",
+  "name": "Request a Quote | Kyair Consulting",
+  "description": "Get a custom AI consulting quote. Build your own package or choose from Launch, Growth, and Automation plans.",
+  "url": "https://kyairconsulting.com/quote",
+  "isPartOf": {
+    "@id": "https://kyairconsulting.com/#website"
+  },
+  "publisher": {
+    "@id": "https://kyairconsulting.com/#organization"
+  }
+};
+
 const Quote = () => {
   const { toast } = useToast();
   const [searchParams] = useSearchParams();
@@ -602,6 +617,7 @@ const Quote = () => {
         title="Get a Free AI Consulting Quote | Kyair Consulting"
         description="Build your custom quote for AI consulting, workflow automation, web development, and IT support services. Get instant pricing from Kyair Consulting."
         canonical="/quote"
+        jsonLd={[quotePageSchema]}
       />
       <AnimatedBackground />
       <section className="px-3 sm:px-4 py-8 sm:py-12">

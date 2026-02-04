@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
       mode === "production" &&
         !isVercel &&
         prerender({
-          routes: ["/", "/about", "/projects", "/packages", "/contact"],
+          routes: ["/", "/about", "/projects", "/packages", "/contact", "/quote"],
           renderer: "@prerenderer/renderer-puppeteer",
           rendererOptions: {
             renderAfterDocumentEvent: "render-event",

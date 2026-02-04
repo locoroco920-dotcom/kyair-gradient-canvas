@@ -71,12 +71,28 @@ const Contact = () => {
     }
   };
 
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://kyairconsulting.com/contact",
+    "name": "Contact Kyair Consulting",
+    "description": "Contact Kyair Consulting for AI consulting, AI automation, and IT support.",
+    "url": "https://kyairconsulting.com/contact",
+    "isPartOf": {
+      "@id": "https://kyairconsulting.com/#website"
+    },
+    "publisher": {
+      "@id": "https://kyairconsulting.com/#organization"
+    }
+  };
+
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20">
       <SEO 
         title="Contact Kyair Consulting | AI Consulting & IT Support"
         description="Contact Kyair Consulting for AI consulting, AI automation, and IT support."
         canonical="/contact"
+        jsonLd={[contactPageSchema]}
       />
       <AnimatedBackground />
       <div className="container mx-auto px-3 sm:px-4 max-w-6xl">

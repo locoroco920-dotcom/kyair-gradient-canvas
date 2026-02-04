@@ -1,4 +1,16 @@
 {
+  "prerender": {
+    "enabled": true,
+    "crawl": true,
+    "routes": [
+      "/",
+      "/about",
+      "/projects",
+      "/packages",
+      "/contact",
+      "/quote"
+    ]
+  },
   "rewrites": [
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/about/", "destination": "/about/index.html" },
@@ -8,6 +20,8 @@
     { "source": "/packages/", "destination": "/packages/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/contact/", "destination": "/contact/index.html" },
+    { "source": "/quote", "destination": "/quote/index.html" },
+    { "source": "/quote/", "destination": "/quote/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
