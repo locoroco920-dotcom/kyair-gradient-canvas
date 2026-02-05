@@ -135,7 +135,7 @@ const Profile = () => {
         canonical="/profile"
         noindex={true}
       />
-      <div className="container max-w-2xl mx-auto">
+      <main className="container max-w-2xl mx-auto">
         <Card className="border-border/50 bg-card/50 backdrop-blur">
           <CardHeader>
             <CardTitle className="text-2xl">Profile</CardTitle>
@@ -211,7 +211,7 @@ const Profile = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
+      </main>
     </div>
   );
 };

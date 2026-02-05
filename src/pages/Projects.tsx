@@ -31,6 +31,7 @@ const Projects = () => {
         jsonLd={[projectsSchema]}
       />
       <AnimatedBackground />
+      <main>
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-10 px-3 sm:pt-24 sm:pb-12 md:pt-32 md:pb-20 sm:px-4">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
@@ -747,6 +748,7 @@ const Projects = () => {
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 };

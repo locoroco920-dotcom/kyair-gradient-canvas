@@ -133,7 +133,7 @@ const Auth = () => {
         noindex={true}
       />
       <AnimatedBackground />
-      <div className="container mx-auto px-3 sm:px-4 max-w-md">
+      <main className="container mx-auto px-3 sm:px-4 max-w-md">
         <Card className="animate-fade-in">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl sm:text-3xl font-bold">
@@ -207,8 +207,9 @@ const Auth = () => {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={showPassword ? "Hide password" : "Show password"}
                   >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    {showPassword ? <EyeOff size={18} aria-hidden="true" /> : <Eye size={18} aria-hidden="true" />}
                   </button>
                 </div>
               </div>
@@ -238,7 +239,7 @@ const Auth = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
+      </main>
     </div>
   );
 };

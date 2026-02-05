@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="flex items-center space-x-2">
             <img 
               src={kyairLogo} 
-              alt="Kyair Consulting" 
+              alt="Kyair Consulting logo" 
               className="h-8 w-8"
               loading="eager"
               decoding="async"
@@ -24,12 +24,12 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-2 my-[5px]">
             <h3 className="text-sm font-semibold text-foreground">Contact Us</h3>
             <div className="flex items-center gap-6 mx-[52px]">
-              <a href="mailto:kyairconsulting@gmail.com" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Mail size={14} />
+              <a href="mailto:kyairconsulting@gmail.com" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors" aria-label="Email Kyair Consulting at kyairconsulting@gmail.com">
+                <Mail size={14} aria-hidden="true" />
                 <span>kyairconsulting@gmail.com</span>
               </a>
-              <a href="tel:+12017395672" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Phone size={14} />
+              <a href="tel:+12017395672" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors" aria-label="Call Kyair Consulting at +1 (201) 739-5672">
+                <Phone size={14} aria-hidden="true" />
                 <span>+1 (201) 739-5672</span>
               </a>
             </div>

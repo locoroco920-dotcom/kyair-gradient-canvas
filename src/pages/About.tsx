@@ -100,6 +100,7 @@ const About = () => {
         jsonLd={[aboutPageSchema, faqSchema]}
       />
       <AnimatedBackground />
+      <main>
 
       {/* Hero / Intro */}
       <section className="px-4 sm:px-6 py-16 sm:py-24">
@@ -288,6 +289,7 @@ const About = () => {
           </Card>
         </div>
       </section>
+      </main>
     </div>
   );
 };
