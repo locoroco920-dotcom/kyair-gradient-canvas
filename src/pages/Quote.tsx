@@ -620,6 +620,7 @@ const Quote = () => {
         jsonLd={[quotePageSchema]}
       />
       <AnimatedBackground />
+      <main>
       <section className="px-3 sm:px-4 py-8 sm:py-12">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
@@ -786,6 +787,7 @@ const Quote = () => {
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 };

@@ -191,6 +191,7 @@ const Packages = () => {
         jsonLd={[packagesSchema]}
       />
       <AnimatedBackground />
+      <main>
       {/* Hero Section */}
       <section className="px-3 sm:px-4 py-12 sm:py-16">
         <div className="container mx-auto max-w-6xl">
@@ -405,6 +406,7 @@ const Packages = () => {
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 };

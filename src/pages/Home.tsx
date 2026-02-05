@@ -186,6 +186,7 @@ const Home = () => {
         jsonLd={[homePageSchema, faqSchema]}
       />
       <AnimatedBackground />
+      <main>
       
       {/* Hero Section */}
       <section className="relative pt-28 pb-16 px-4 sm:pt-36 sm:pb-24">
@@ -362,6 +363,7 @@ const Home = () => {
           </Card>
         </div>
       </section>
+      </main>
     </div>
   );
 };

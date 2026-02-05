@@ -21,16 +21,16 @@ const NotFound = () => {
         noindex={true}
       />
       <AnimatedBackground />
-      <div className="text-center px-4">
+      <main className="text-center px-4">
         <h1 className="text-6xl sm:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">404</h1>
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8">Oops! Page not found</p>
-        <Link to="/">
+        <Link to="/" aria-label="Return to Kyair Consulting homepage">
           <Button variant="gradient" size="lg" className="gap-2">
-            <Home size={20} />
+            <Home size={20} aria-hidden="true" />
             Return to Home
           </Button>
         </Link>
-      </div>
+      </main>
     </div>
   );
 };

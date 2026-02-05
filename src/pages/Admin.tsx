@@ -128,7 +128,7 @@ const Admin = () => {
         canonical="/admin"
         noindex={true}
       />
-      <div className="container max-w-6xl mx-auto space-y-8">
+      <main className="container max-w-6xl mx-auto space-y-8">
         <div>
           <h1 className="text-3xl font-bold">Admin Dashboard</h1>
           <p className="text-muted-foreground mt-2">
@@ -244,7 +244,7 @@ const Admin = () => {
             )}
           </CardContent>
         </Card>
-      </div>
+      </main>
     </div>
   );
 };

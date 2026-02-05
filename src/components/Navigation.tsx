@@ -40,18 +40,18 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity group">
+          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity group" aria-label="Home - Kyair Consulting">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-primary rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
               <img 
                 src={kyairLogo} 
-                alt="Kyair Consulting" 
+                alt="Kyair Consulting logo" 
                 className="h-10 w-10 relative z-10" 
                 loading="eager"
                 decoding="async"
               />
             </div>
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent" aria-hidden="true">
               Kyair Consulting
             </span>
           </Link>
