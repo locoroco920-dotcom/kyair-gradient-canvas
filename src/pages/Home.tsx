@@ -228,8 +228,8 @@ const Home = () => {
                 </Button>
               </Link>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                <Link to="/about" aria-label="Learn more about Kyair Consulting">
-                  Learn More
+                <Link to="/about">
+                  Learn More <span className="sr-only">about Kyair Consulting</span>
                 </Link>
               </Button>
             </div>
