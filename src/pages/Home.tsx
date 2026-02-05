@@ -227,11 +227,11 @@ const Home = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </Button>
               </Link>
-              <Link to="/about" aria-label="Learn more about Kyair Consulting">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                <Link to="/about" aria-label="Learn more about Kyair Consulting">
                   Learn More
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
