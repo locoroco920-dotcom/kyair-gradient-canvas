@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import kyairLogo from "@/assets/kyair-logo.png";
+import kyairLogo from "@/assets/kyair-logo.webp";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
