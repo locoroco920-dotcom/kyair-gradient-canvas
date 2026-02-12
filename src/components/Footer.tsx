@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import kyairLogo from "@/assets/kyair-logo.png";
+import kyairLogo from "@/assets/kyair-logo.webp";
 const Footer = () => {
   return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-4">
